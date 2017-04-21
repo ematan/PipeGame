@@ -4,7 +4,7 @@ $(document).ready(function(){
     var ctx = canvas.getContext('2d');
     
     var cheigth = 490;
-    var cwidth = 800;
+    var cwidth = 870;
     var squareSize = 70
     
     var drawGrid = function(startX, startY, w, h, id) {
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
         };
 
-        drawGrid(100, 0, cwidth, cheigth, "grid");
+        drawGrid(100+squareSize, 0, cwidth, cheigth, "grid");
         drawGrid(0, 0, squareSize, cheigth, "grid");
 
 })
