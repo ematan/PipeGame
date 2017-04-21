@@ -1,10 +1,16 @@
+var img1 = new Image
+img1.src="man.jpg"
+
 var straight1={
-    up: true;
-    down: true;
-    left: false;
-    rigth: false;
+    x: 0,
+    y: 0,
+    up: true,
+    down: true,
+    left: false,
+    rigth: false,
+    img: img1 
 };
-var straight2={
+/*var straight2={
     up: false;
     down: false;
     left: true;
@@ -36,11 +42,34 @@ var conrner4={
 }
 
 var allPipes = [
-    straight1;
-    straight2;
-    conrner1;
-    conrner2;
-    conrner3;
-    conrner4;
-];
+    straight1,
+    straight2,
+    conrner1,
+    conrner2,
+    conrner3,
+    conrner4
+];*/
+
+var pipesInGame = [];
+var pipesWaiting = [];
+
+function pipeToGrid(newX, newY, pipeIndex){
+    var newPipe =straight1
+    newPipe.x = newX
+    newPipe.y = newY
+    pipesInGame.push(newPipe)
+};
+
+function drawPipe(context){
+    for(var i=0; i<pipesInGame.length;i++){
+        var m = pipesInGame[i]
+        context.drawImage(m.img, 100+m.x*squareSize, m.y*squareSize);
+    }
+};
+
+
+
+
+
+
 
