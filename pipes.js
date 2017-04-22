@@ -10,7 +10,7 @@ var straight1={
     rigth: false,
     img: img1 
 };
-/*var straight2={
+var straight2={
     up: false;
     down: false;
     left: true;
@@ -48,13 +48,13 @@ var allPipes = [
     conrner2,
     conrner3,
     conrner4
-];*/
+];
 
 var pipesInGame = [];
 var pipesWaiting = [];
 
 function pipeToGrid(newX, newY, pipeIndex){
-    var newPipe =straight1
+    var newPipe = straight1
     newPipe.x = newX
     newPipe.y = newY
     pipesInGame.push(newPipe)

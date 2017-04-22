@@ -17,4 +17,4 @@ $(document).ready(function(){
     drawGrid(0, 0, squareSize, cheigth, "grid");
     drawPipe(ctx)
 
-})
+});
