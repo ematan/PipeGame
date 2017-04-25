@@ -8,7 +8,7 @@ var straight1={
     down: true,
     left: false,
     rigth: false,
-    img: img1 
+    img: document.createElement('straight1') 
 };
 var straight2={
     up: false,
@@ -41,6 +41,13 @@ var conrner4={
     rigth: false
 }
 
+var startingPipe={
+    up: false,
+    down: false,
+    left: false,
+    rigth: true
+}
+
 var allPipes = [
     straight1,
     straight2,
@@ -50,22 +57,20 @@ var allPipes = [
     conrner4
 ];
 
-var pipesInGame = [];
-var pipesWaiting = [];
-
 function pipeToGrid(newX, newY, pipeIndex){
     var newPipe = straight1
     newPipe.x = newX
     newPipe.y = newY
-    pipesInGame.push(newPipe)
+    pipesInGame.add(newPipe)
 };
 
-function drawPipe(context){
+//tuskin tarvii
+/*function drawPipe(context){
     for(var i=0; i<pipesInGame.length;i++){
         var m = pipesInGame[i]
         context.drawImage(m.img, 100+m.x*squareSize, m.y*squareSize);
     }
-};
+};*/
 
 
 
