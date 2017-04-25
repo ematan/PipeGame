@@ -1,51 +1,65 @@
-var img1 = new Image
-img1.src="man.jpg"
+//uusi putki-olio, joka ottaa ominaisuuksia alla olevista "putkityypeistä"
+function createPipe(){
+    var arvottu = allPipes[randomPipe()]
+    var pipe = {
+        up: arvottu.up ,
+        down: arvottu.down,
+        left: arvottu.left,
+        rigth: arvottu.rigth,
+        img: arvottu.img
+    }
+    return pipe
+}
 
 var straight1={
-    x: 0,
-    y: 0,
     up: true,
     down: true,
     left: false,
     rigth: false,
-    img: document.createElement('straight1') 
+    img: 'straight1'
 };
 var straight2={
     up: false,
     down: false,
     left: true,
-    rigth: true
+    rigth: true,
+    img: 'straight2'
 };
 var conrner1={
     up: true,
     down: false,
     left: false,
-    rigth: true
+    rigth: true,
+    img: 'corner1'
 };
 var conrner2={
     up: false,
     down: true,
     left: false,
-    rigth: true
+    rigth: true,
+    img: 'corner2'
 };
 var conrner3={
     up: false,
     down: true,
     left: true,
-    rigth: false
+    rigth: false,
+    img: 'corner3'
 };
 var conrner4={
     up: true,
     down: false,
     left: true,
-    rigth: false
+    rigth: false,
+    img: 'corner4'
 }
 
 var startingPipe={
     up: false,
     down: false,
     left: false,
-    rigth: true
+    rigth: true,
+    img: 'start'
 }
 
 var allPipes = [
@@ -63,9 +77,30 @@ function getRandomInteger(min, max) {
 };   
 
 function randomPipe(){
-    var x = getRandomInteger(0, allPipes.length);
+    var x = getRandomInteger(0, allPipes.length-1);
     return x;
 }
+
+function enableDrag(pipe){
+    pipe.inputEnabled = true;
+    pipe.input.enableDrag(true);
+}
+
+function unEnableDrag(pipe){
+    pipe.inputEnabled = false;
+    pipe.input.enableDrag(false);
+}
+
+//vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä.
+/*function checkPipeLocation(pipe){
+    if()
+}*/
+
+
+
+
+
+
 
 
 //tuskin tarvii

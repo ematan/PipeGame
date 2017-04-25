@@ -1,4 +1,4 @@
-var cheigth = 490;
+/*var cheigth = 490;
 var cwidth = 870;
 var squareSize = 70;
 var canvas;
@@ -17,4 +17,4 @@ $(document).ready(function(){
     drawGrid(0, 0, squareSize, cheigth, "grid");
     drawPipe(ctx)
 
-});
+});*/
