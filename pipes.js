@@ -57,21 +57,31 @@ var allPipes = [
     conrner4
 ];
 
-function pipeToGrid(newX, newY, pipeIndex){
+
+function getRandomInteger(min, max) {
+    return (Math.random() * (max - min) + min)|2;
+};   
+
+function randomPipe(){
+    var x = getRandomInteger(0, allPipes.length);
+    return x;
+}
+
+
+//tuskin tarvii
+/*function pipeToGrid(newX, newY, pipeIndex){
     var newPipe = straight1
     newPipe.x = newX
     newPipe.y = newY
     pipesInGame.add(newPipe)
 };
 
-//tuskin tarvii
-/*function drawPipe(context){
+function drawPipe(context){
     for(var i=0; i<pipesInGame.length;i++){
         var m = pipesInGame[i]
         context.drawImage(m.img, 100+m.x*squareSize, m.y*squareSize);
     }
 };*/
-
 
 
 
