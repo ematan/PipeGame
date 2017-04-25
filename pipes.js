@@ -11,34 +11,34 @@ var straight1={
     img: img1 
 };
 var straight2={
-    up: false;
-    down: false;
-    left: true;
-    rigth: true;
+    up: false,
+    down: false,
+    left: true,
+    rigth: true
 };
 var conrner1={
-    up: true;
-    down: false;
-    left: false;
-    rigth: true;
+    up: true,
+    down: false,
+    left: false,
+    rigth: true
 };
 var conrner2={
-    up: false;
-    down: true;
-    left: false;
-    rigth: true;
+    up: false,
+    down: true,
+    left: false,
+    rigth: true
 };
 var conrner3={
-    up: false;
-    down: true;
-    left: true;
-    rigth: false;  
+    up: false,
+    down: true,
+    left: true,
+    rigth: false
 };
 var conrner4={
-    up: true;
-    down: false;
-    left: true;
-    rigth: false;
+    up: true,
+    down: false,
+    left: true,
+    rigth: false
 }
 
 var allPipes = [
