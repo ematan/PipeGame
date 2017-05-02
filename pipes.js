@@ -91,10 +91,16 @@ function unEnableDrag(pipe){
     pipe.input.enableDrag(false);
 }
 
-//vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä.
-/*function checkPipeLocation(pipe){
-    if()
-}*/
+//vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä. ei toimi vielä. pitää kutsua tätä funktiota silloin, kun yritetään liikuttaa putkenpalaa
+function checkPipeLocation(pipe){
+    if((pipe.y >= 0 || pipe.y <= cheigth) && (pipe.x >= 0 || pipe.x <= squareSize)){
+        enableDrag
+    }
+    else{unEnableDrag}
+}
+
+//voiko kutsua näin?!?!
+//checkPipeLocation(pipe)
 
 
 
@@ -103,7 +109,20 @@ function unEnableDrag(pipe){
 
 
 
-//tuskin tarvii
+
+
+
+
+
+
+
+
+
+
+
+
+
+//tuskin tarvii näitä
 /*function pipeToGrid(newX, newY, pipeIndex){
     var newPipe = straight1
     newPipe.x = newX

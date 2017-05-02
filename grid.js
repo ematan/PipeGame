@@ -15,7 +15,6 @@ var drawGrid = function(startX, startY, w, h) {
     }
 }
 
-
 var waitingRoom = ["","","","","","",""];
 
 //funktio, joka täyttää sivussa olevan ruudukon, josta raahataan putket peliruudukkoon. ei ole vielä linkattu ruuduukkoon = ei toimi...
@@ -24,5 +23,12 @@ function fillWaitingRoom(){
         if(waitingRoom[y] == ""){
             waitingRoom[y] = createPipe
 }
+    
+    
+    
+    
+    
+    
+    
 }
 
