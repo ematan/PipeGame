@@ -23,7 +23,7 @@ function create() {
     var pipesInGame = game.add.group();
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(170, 350, 'start');
-    EnableDrag(startingPipe)
+    enableDrag(startingPipe)
     fillWaitingRoom;
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
