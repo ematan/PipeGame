@@ -23,9 +23,9 @@ function create() {
     var pipesInGame = game.add.group();
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(140, 350, 'start');
+    createMega();
     fillWaitingRoom();
-    //drawWaitingRoom();
-    //createMega();
+    drawWaitingRoom();
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
 
@@ -35,7 +35,7 @@ function create() {
 
 function update() {
     fillWaitingRoom();
-    //drawWaitingRoom();
+    drawWaitingRoom();
 }
 
 //var bench7 = ["","","","","","",""];
@@ -43,32 +43,30 @@ function update() {
 function drawWaitingRoom(){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
-    var startLoc = (waitingRoom[i].x, waitingRoom[i].y);
     enableDrag(x);
     x.input.enableSnap(squareSize, squareSize, false, true);
-    x.events.onDragStop.add(function(){fixLocation(this, startLoc)}, this);
+    x.events.onDragStop.add(function(){fixLocation(this, i)}, this);
     //x.events.onDragStop.add(fixLocation(x, startLoc));
     waitingRoom[i]=x
   }
 };
 
 function fixLocation(item, location) {
-    var origLocX;
-    var origLocY;
-    origLocX, origLocY = location;
+    var origLocY = location*squareSize
     // Move the items when it is already dropped.
     if (item.x < 3*squareSize || item.x > 12*squareSize) {
-        item.x = origLocX;
+        console.log(origLocY)
+        item.x = 0;
         item.y = origLocY;
     }
-    /*else{
+    else{
         var newLocX = (item.x+squareSize/2) + 3*squareSize;
         var newLocY = (item.y+squareSize/2)
         console.log(newLocX)
         item.x = newLocX
         megaArray[newLocX][newLocY] = item
 
-    }*/
+    }
 
 }
 

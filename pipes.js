@@ -52,16 +52,14 @@ var corner4={
     left: true,
     rigth: false,
     img: 'corner4'
-}
-
+};
 var startingPipe={
     up: false,
     down: false,
     left: false,
     rigth: true,
     img: 'start'
-}
-
+};
 var allPipes = [
     straight1,
     straight2,
