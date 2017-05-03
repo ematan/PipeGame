@@ -34,7 +34,7 @@ function create() {
 function update() {
     fillWaitingRoom
 }
-
+  
 /*var pos1 = straight1;
 var pos2 = straight1;
 var pos3 = straight1;
@@ -48,6 +48,6 @@ var bench7 = ["","","","","","",""];
 function drawWaitingRoom(){
   for(var i=0; i<5; i++){
     waitingRoom[i] = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
-    
+
   }
 };
