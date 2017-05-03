@@ -1,6 +1,6 @@
 //uusi putki-olio, joka ottaa ominaisuuksia alla olevista "putkityypeistä"
 function createPipe(){
-    var arvottu = allPipes[randomPipe]
+    var arvottu = allPipes[randomPipe()];
     /*var pipe = {
         up: arvottu.up,
         down: arvottu.down,
@@ -73,10 +73,14 @@ var allPipes = [
 
 
 function getRandomInteger(min, max) {
-    return (Math.random() * (max - min) + min)|2;
+    return Math.floor(Math.random()*(max-min+1))+min;
 };   
 
-var randomPipe = getRandomInteger(0, allPipes.length-1);
+function randomPipe(){
+    var x = getRandomInteger(0, (allPipes.length-1));
+    console.log(x)
+    return x
+}
 
 function enableDrag(pipe){
     pipe.inputEnabled = true;

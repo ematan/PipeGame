@@ -21,8 +21,8 @@ var waitingRoom = ["","","","","","",""];
 function fillWaitingRoom(){
     for(var y = 0; y < 7; y++){
         if(waitingRoom[y] == ""){
-            waitingRoom[y] = createPipe()
-            
+            waitingRoom[y] = createPipe();
+           // enableDrag(waitingRoom[y]);
         }
     } 
 };
