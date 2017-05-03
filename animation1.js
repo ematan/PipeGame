@@ -24,11 +24,30 @@ function create() {
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(170, 350, 'start');
     enableDrag(startingPipe)
-    fillWaitingRoom;
+    fillWaitingRoom();
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
+    
+
 }
 
 function update() {
     fillWaitingRoom
+}
+
+
+var pos1;
+var pos2;
+var pos3;
+var pos4;
+var pos5;
+var pos6;
+var pos7;
+
+var bench7 = [pos1, pos2, pos3, pos4, pos5, pos6, pos7]
+
+function drawWaitingRoom(){
+  for(var i=0; i<5, i++){
+    bench[i] = game.add.sprite(0,i*squareSize, waitingRoom[i].img)
+  }
 }
