@@ -1,4 +1,4 @@
-var game = new Phaser.Game(900, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(900, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
 
 var gridH = 490;
 var gridW = 735;
@@ -34,8 +34,17 @@ function create() {
 
 
 function update() {
-    fillWaitingRoom();
-    drawWaitingRoom();
+    game.input.onDown.add(updateY, this)
+    //fillWaitingRoom();
+    //drawWaitingRoom();
+}
+function updateY(){
+  currentY = Math.floor(game.input.mousePointer.y/squareSize)
+}
+
+var result = ""
+function render(){
+  game.debug.text(result, 100, 200);
 }
 
 //var bench7 = ["","","","","","",""];
@@ -55,21 +64,22 @@ function drawWaitingRoom(){
   }
 };
 
-function fixLocation(item, location) {
+function fixLocation(item) {
     //var origLocY = location*squareSize;
-    //console.log(item.x " + " item.y);
+    console.log(item.x);
     // Move the items when it is already dropped.
     if (item.x < 3*squareSize || item.x > 12*squareSize) {
         //console.log(latestY);
         item.x = 0;
-        item.y = currentY;
+        console.log(currentY);
+        item.y = currentY*squareSize;
     }
     else{
         var newLocX = (item.x/squareSize);
         var newLocY = (item.y/squareSize);
         item.x = newLocX*squareSize+ 3*squareSize;
         item.y = newLocY*squareSize;
-        megaArray[newLocX][newLocY] = item;
+        //megaArray[newLocX][newLocY] = item;
 
     }
 

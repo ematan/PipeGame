@@ -94,9 +94,12 @@ function unEnableDrag(pipe){
 //function onDragStop(sprite, pointer) {}
 
 var currentY;
+function getCurrentY(){currentY};
 
 function onDragStart(sprite, pointer){
-  currentY = pointer.x/squareSize
+  //currentY = Math.floor(pointer.y/squareSize);
+  result = sprite.key + " starts at y:" + pointer.y + " and currentY:" +currentY
+
 }
 
 
