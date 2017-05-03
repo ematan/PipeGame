@@ -19,16 +19,11 @@ var waitingRoom = ["","","","","","",""];
 
 //funktio, joka täyttää sivussa olevan ruudukon, josta raahataan putket peliruudukkoon. ei ole vielä linkattu ruuduukkoon = ei toimi...
 function fillWaitingRoom(){
-    for(var y = 0; y < 7; y++)
+    for(var y = 0; y < 7; y++){
         if(waitingRoom[y] == ""){
-            waitingRoom[y] = createPipe
-}
-    
-    
-    
-    
-    
-    
-    
-}
+            waitingRoom[y] = createPipe()
+            
+        }
+    } 
+};
 
