@@ -31,10 +31,11 @@ function create() {
 
 }
 
+
 function update() {
     fillWaitingRoom
 }
-  
+
 /*var pos1 = straight1;
 var pos2 = straight1;
 var pos3 = straight1;
