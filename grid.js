@@ -1,5 +1,5 @@
 var drawGrid = function(startX, startY, w, h) {
-    
+
     var gfx = game.add.graphics(startX, startY);
     gfx.lineStyle(3, 0xffffff, 5);
 
@@ -21,9 +21,11 @@ var waitingRoom = ["","","","","","",""];
 function fillWaitingRoom(){
     for(var y = 0; y < 7; y++){
         if(waitingRoom[y] == ""){
-            waitingRoom[y] = createPipe();
+            var temp = createPipe();
+            temp.origY = y
+            waitingRoom[y] = temp;
         }
-    } 
+    }
 };
 
 //tässä luodaan itse peliruudukko
@@ -34,4 +36,3 @@ function createMega(){
   }
 };
 // näin täytetään...: x[5][12] = 3.0;
-

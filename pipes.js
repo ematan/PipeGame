@@ -9,42 +9,48 @@ var straight1={
     down: true,
     left: false,
     rigth: false,
-    img: 'straight1'
+    img: 'straight1',
+    origY: 0
 };
 var straight2={
     up: false,
     down: false,
     left: true,
     rigth: true,
-    img: 'straight2'
+    img: 'straight2',
+    origY: 0
 };
 var corner1={
     up: true,
     down: false,
     left: false,
     rigth: true,
-    img: 'corner1'
+    img: 'corner1',
+    origY: 0
 };
 var corner2={
     up: false,
     down: true,
     left: false,
     rigth: true,
-    img: 'corner2'
+    img: 'corner2',
+    origY: 0
 };
 var corner3={
     up: false,
     down: true,
     left: true,
     rigth: false,
-    img: 'corner3'
+    img: 'corner3',
+    origY: 0
 };
 var corner4={
     up: true,
     down: false,
     left: true,
     rigth: false,
-    img: 'corner4'
+    img: 'corner4',
+    origY: 0
 };
 var startingPipe={
     up: false,
@@ -76,12 +82,24 @@ function randomPipe(){
 function enableDrag(pipe){
     pipe.inputEnabled = true;
     pipe.input.enableDrag(true);
+    pipe.events.onDragStart.add(onDragStart, this);
+    //pipe.events.onDragStop.add(onDragStop, this);
 }
 
 function unEnableDrag(pipe){
     pipe.inputEnabled = false;
     pipe.input.enableDrag(false);
 }
+
+//function onDragStop(sprite, pointer) {}
+
+var currentY;
+
+function onDragStart(sprite, pointer){
+  currentY = pointer.x/squareSize
+}
+
+
 
 //vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä. ei toimi vielä? pitää kutsua tätä funktiota silloin, kun yritetään liikuttaa putkenpalaa
 function checkPipeLocation(pipe){
@@ -107,5 +125,3 @@ function checkOverlap(sprite1, sprite2){
         //palauta raahattava putki takasin paikallensa.
     }
 };
-
-

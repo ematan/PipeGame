@@ -35,7 +35,7 @@ function create() {
 
 function update() {
     fillWaitingRoom();
-    //drawWaitingRoom();
+    drawWaitingRoom();
 }
 
 //var bench7 = ["","","","","","",""];
@@ -47,28 +47,28 @@ function drawWaitingRoom(){
     enableDrag(x);
     //x.input.enableSnap(squareSize, squareSize, false, true);
     var a = i;
-    x.events.onDragStart.add(function(){latestY=a});
-    x.events.onDragStop.add(function(){fixLocation(this, latestY)}, this);
+    //x.events.onDragStart.add(function(){latestY=a});
+    x.events.onDragStop.add(fixLocation, this);
     //x.events.onDragStop.add(fixLocation(x, startLoc));
-    console.log(latestY);
+    //console.log(latestY);
     waitingRoom[i]=x;
   }
 };
 
 function fixLocation(item, location) {
-    var origLocY = location*squareSize;
+    //var origLocY = location*squareSize;
     //console.log(item.x " + " item.y);
     // Move the items when it is already dropped.
     if (item.x < 3*squareSize || item.x > 12*squareSize) {
-        console.log(latestY);
+        //console.log(latestY);
         item.x = 0;
-        item.y = origLocY;
+        item.y = currentY;
     }
     else{
-        var newLocX = (item.x+squareSize/2) + 3*squareSize;
-        var newLocY = (item.y+squareSize/2);
-        item.x = newLocX;
-        item.y = newLocY;
+        var newLocX = (item.x/squareSize);
+        var newLocY = (item.y/squareSize);
+        item.x = newLocX*squareSize+ 3*squareSize;
+        item.y = newLocY*squareSize;
         megaArray[newLocX][newLocY] = item;
 
     }
