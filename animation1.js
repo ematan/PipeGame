@@ -23,11 +23,11 @@ function create() {
     var pipesInGame = game.add.group();
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(170, 350, 'start');
-    enableDrag(startingPipe)
+    enableDrag(startingPipe);
     fillWaitingRoom();
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
-    
+    drawWaitingRoom();
 
 }
 
@@ -35,19 +35,19 @@ function update() {
     fillWaitingRoom
 }
 
-
-var pos1;
-var pos2;
-var pos3;
-var pos4;
-var pos5;
-var pos6;
-var pos7;
-
-var bench7 = [pos1, pos2, pos3, pos4, pos5, pos6, pos7]
+/*var pos1 = straight1;
+var pos2 = straight1;
+var pos3 = straight1;
+var pos4 = straight1;
+var pos5 = straight1;
+var pos6 = straight1;
+var pos7 = straight1;
+*/
+var bench7 = ["","","","","","",""];
 
 function drawWaitingRoom(){
-  for(var i=0; i<5, i++){
-    bench[i] = game.add.sprite(0,i*squareSize, waitingRoom[i].img)
+  for(var i=0; i<5; i++){
+    waitingRoom[i] = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
+    
   }
-}
+};
