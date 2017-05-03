@@ -1,15 +1,15 @@
 //uusi putki-olio, joka ottaa ominaisuuksia alla olevista "putkityypeistä"
 function createPipe(){
-    var arvottu = allPipes[randomPipe()]
-    var pipe = {
-        up: arvottu.up ,
+    var arvottu = allPipes[randomPipe]
+    /*var pipe = {
+        up: arvottu.up,
         down: arvottu.down,
         left: arvottu.left,
         rigth: arvottu.rigth,
         img: arvottu.img
-    }
-    return pipe
-}
+    }*/
+    return arvottu;
+};
 
 var straight1={
     up: true,
@@ -25,28 +25,28 @@ var straight2={
     rigth: true,
     img: 'straight2'
 };
-var conrner1={
+var corner1={
     up: true,
     down: false,
     left: false,
     rigth: true,
     img: 'corner1'
 };
-var conrner2={
+var corner2={
     up: false,
     down: true,
     left: false,
     rigth: true,
     img: 'corner2'
 };
-var conrner3={
+var corner3={
     up: false,
     down: true,
     left: true,
     rigth: false,
     img: 'corner3'
 };
-var conrner4={
+var corner4={
     up: true,
     down: false,
     left: true,
@@ -65,10 +65,10 @@ var startingPipe={
 var allPipes = [
     straight1,
     straight2,
-    conrner1,
-    conrner2,
-    conrner3,
-    conrner4
+    corner1,
+    corner2,
+    corner3,
+    corner4
 ];
 
 
@@ -76,10 +76,7 @@ function getRandomInteger(min, max) {
     return (Math.random() * (max - min) + min)|2;
 };   
 
-function randomPipe(){
-    var x = getRandomInteger(0, allPipes.length-1);
-    return x;
-}
+var randomPipe = getRandomInteger(0, allPipes.length-1);
 
 function enableDrag(pipe){
     pipe.inputEnabled = true;
@@ -97,7 +94,7 @@ function checkPipeLocation(pipe){
         enableDrag
     }
     else{unEnableDrag}
-}
+};
 
 //voiko kutsua näin?!?!
 //checkPipeLocation(pipe)
