@@ -1,13 +1,6 @@
 //uusi putki-olio, joka ottaa ominaisuuksia alla olevista "putkityypeistä"
 function createPipe(){
     var arvottu = allPipes[randomPipe()];
-    /*var pipe = {
-        up: arvottu.up,
-        down: arvottu.down,
-        left: arvottu.left,
-        rigth: arvottu.rigth,
-        img: arvottu.img
-    }*/
     return arvottu;
 };
 
@@ -98,40 +91,20 @@ function checkPipeLocation(pipe){
     else{unEnableDrag}
 };
 
-var megaArray = new Array(9);
-function createMega(){
-  for (var i = 0; i < 9; i++) {
-    megaArray[i] = new Array(7);
-  }
-}
-// näin täytetään...: x[5][12] = 3.0;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//tuskin tarvii näitä
-/*function pipeToGrid(newX, newY, pipeIndex){
-    var newPipe = straight1
-    newPipe.x = newX
-    newPipe.y = newY
-    pipesInGame.add(newPipe)
+//lisää putken peliruudukkoon
+function addPipe(pipe, x, y){
+    megaArray[x][y] = pipe;
 };
 
-function drawPipe(context){
-    for(var i=0; i<pipesInGame.length;i++){
-        var m = pipesInGame[i]
-        context.drawImage(m.img, 100+m.x*squareSize, m.y*squareSize);
+//poistaa putken peliruudukosta
+function deletePipe(pipe, x, y){
+    delete megaArray[pipe[x]][pipe[y]];
+};
+
+function overlap(sprite1, sprite2){
+    if (sprite1.overlap(sprite2)) {
+        //palauta raahattava putki takasin paikallensa.
     }
-};*/
+}
+
+
