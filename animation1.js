@@ -1,7 +1,7 @@
-var game = new Phaser.Game(870, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(843, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
-var cheigth = 490;
-var cwidth = 870;
+var gridH = 490;
+var gridW = 735;
 var squareSize = 70;
 
 function preload() {
@@ -18,11 +18,11 @@ function preload() {
 }
 
 function create() {
-    drawGrid(48+squareSize, 0, cwidth, cheigth);
-    drawGrid(0, 0, squareSize, cheigth);
+    drawGrid(1.5*squareSize, 0, gridW, gridH);
+    drawGrid(0, 0, squareSize, gridH);
     var pipesInGame = game.add.group();
     var pipesWaiting = game.add.group();
-    startingPipe = game.add.sprite(170, 350, 'start');
+    startingPipe = game.add.sprite(140, 350, 'start');
     fillWaitingRoom();
     drawWaitingRoom();
     //spriten luominen
@@ -42,9 +42,27 @@ function drawWaitingRoom(){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
     enableDrag(x)
+    x.input.enableSnap(squareSize, squareSize, false, true);
+    //x.events.onDragStop.add(fixLocation);
     waitingRoom[i]=x
   }
 };
+
+function fixLocation(item) {
+
+    // Move the items when it is already dropped.
+    if (item.x < 90) {
+        item.x = 90;
+    }
+    else if (item.x > 180 && item.x < 270) {
+        item.x = 180;
+    }
+    else if (item.x > 360) {
+        item.x = 270;
+    }
+
+}
+
 
 /*function enableDragWaiting(){
     for(var i=0; i<7; i++){

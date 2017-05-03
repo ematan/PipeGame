@@ -1,10 +1,10 @@
 var drawGrid = function(startX, startY, w, h) {
     
     var gfx = game.add.graphics(startX, startY);
-        gfx.lineStyle(3, 0xffffff, 5);
+    gfx.lineStyle(3, 0xffffff, 5);
 
-    for (x=startX;x<=w;x+=squareSize) {
-        for (y=startY;y<=h;y+=squareSize) {
+    for (x=startX; x<=w; x+=squareSize) {
+        for (y=startY; y<=h; y+=squareSize) {
             gfx.moveTo(x, startY);
             gfx.lineTo(x, h);
             gfx.endFill();
@@ -13,7 +13,7 @@ var drawGrid = function(startX, startY, w, h) {
             gfx.endFill();
         }
     }
-}
+};
 
 var waitingRoom = ["","","","","","",""];
 

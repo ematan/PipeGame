@@ -100,13 +100,11 @@ function checkPipeLocation(pipe){
     else{unEnableDrag}
 };
 
-//voiko kutsua näin?!?!
-//checkPipeLocation(pipe)
-
-
-
-
-
+var megaArray = new Array(9);
+for (var i = 0; i < 9; i++) {
+    megaArray[i] = new Array(7);
+}
+// näin täytetään...: x[5][12] = 3.0;
 
 
 
