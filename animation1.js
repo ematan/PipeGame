@@ -1,4 +1,4 @@
-var game = new Phaser.Game(843, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(900, 490, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 var gridH = 490;
 var gridW = 735;
@@ -24,16 +24,18 @@ function create() {
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(140, 350, 'start');
     fillWaitingRoom();
-    drawWaitingRoom();
+    //drawWaitingRoom();
+    //createMega();
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
-    
-    
+
+
 }
 
 
 function update() {
-    fillWaitingRoom
+    fillWaitingRoom();
+    //drawWaitingRoom();
 }
 
 //var bench7 = ["","","","","","",""];
@@ -41,25 +43,32 @@ function update() {
 function drawWaitingRoom(){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
-    enableDrag(x)
+    var startLoc = (waitingRoom[i].x, waitingRoom[i].y);
+    enableDrag(x);
     x.input.enableSnap(squareSize, squareSize, false, true);
-    //x.events.onDragStop.add(fixLocation);
+    x.events.onDragStop.add(function(){fixLocation(this, startLoc)}, this);
+    //x.events.onDragStop.add(fixLocation(x, startLoc));
     waitingRoom[i]=x
   }
 };
 
-function fixLocation(item) {
-
+function fixLocation(item, location) {
+    var origLocX;
+    var origLocY;
+    origLocX, origLocY = location;
     // Move the items when it is already dropped.
-    if (item.x < 90) {
-        item.x = 90;
+    if (item.x < 3*squareSize || item.x > 12*squareSize) {
+        item.x = origLocX;
+        item.y = origLocY;
     }
-    else if (item.x > 180 && item.x < 270) {
-        item.x = 180;
-    }
-    else if (item.x > 360) {
-        item.x = 270;
-    }
+    /*else{
+        var newLocX = (item.x+squareSize/2) + 3*squareSize;
+        var newLocY = (item.y+squareSize/2)
+        console.log(newLocX)
+        item.x = newLocX
+        megaArray[newLocX][newLocY] = item
+
+    }*/
 
 }
 

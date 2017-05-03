@@ -74,7 +74,7 @@ var allPipes = [
 
 function getRandomInteger(min, max) {
     return Math.floor(Math.random()*(max-min+1))+min;
-};   
+};
 
 function randomPipe(){
     var x = getRandomInteger(0, (allPipes.length-1));
@@ -101,8 +101,10 @@ function checkPipeLocation(pipe){
 };
 
 var megaArray = new Array(9);
-for (var i = 0; i < 9; i++) {
+function createMega(){
+  for (var i = 0; i < 9; i++) {
     megaArray[i] = new Array(7);
+  }
 }
 // näin täytetään...: x[5][12] = 3.0;
 
@@ -135,9 +137,3 @@ function drawPipe(context){
         context.drawImage(m.img, 100+m.x*squareSize, m.y*squareSize);
     }
 };*/
-
-
-
-
-
-
