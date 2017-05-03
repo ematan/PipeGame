@@ -101,10 +101,11 @@ function deletePipe(pipe, x, y){
     delete megaArray[pipe[x]][pipe[y]];
 };
 
-function overlap(sprite1, sprite2){
+//tarkistaa, että menevätkö putket päällekäin peliruudukolla. Jos menee, niin pitäisi palauttaa alkuperäiselle paikalle.
+function checkOverlap(sprite1, sprite2){
     if (sprite1.overlap(sprite2)) {
         //palauta raahattava putki takasin paikallensa.
     }
-}
+};
 
 
