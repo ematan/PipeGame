@@ -123,13 +123,13 @@ function deletePipe(pipe, x, y){
 };
 
 //tarkistaa, että menevätkö putket päällekäin peliruudukolla. Jos menee, niin pitäisi palauttaa alkuperäiselle paikalle.
-function checkOverlap(){
+/*function checkOverlap(){
     for(var i=0; i<7; i++){
         for(var j=0; i<7; i++){
-            if (waitingRoom[i].overlap(waitingRoom[j])) {
+            if (megaArray[i].[j])) {
             //palauta raahattava putki takasin paikallensa.
         
             }
         }
     }
-};
+};*/

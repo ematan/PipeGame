@@ -73,14 +73,14 @@ function fixLocation(item) {
     var newLocY = (item.y/squareSize);
     console.log(newLocX + " " + newLocY)
     
-        if (item.x < 3*squareSize || item.x > 12*squareSize || megaArray[newLocX][newLocY]!=undefined) {
-            //console.log(latestY);
-            item.x = 0;
-            console.log(currentY);
-            item.y = currentY*squareSize;
-        }
+    if (item.x < 3*squareSize || item.x > 12*squareSize || megaArray[newLocX][newLocY]!=undefined) {
+        item.x = 0;
+        console.log(currentY);
+        item.y = currentY*squareSize;
+    }
     
     else{
+        unEnableDrag(item)
         var newLocX = (item.x/squareSize);
         var newLocY = (item.y/squareSize);
         item.x = newLocX*squareSize;
