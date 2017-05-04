@@ -31,7 +31,7 @@ function fillWaitingRoom(){
 //tässä luodaan itse peliruudukko
 var megaArray = new Array(9);
 function createMega(){
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 12; i++) {
     megaArray[i] = new Array(7);
   }
 };

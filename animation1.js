@@ -23,6 +23,7 @@ function create() {
     var pipesInGame = game.add.group();
     var pipesWaiting = game.add.group();
     startingPipe = game.add.sprite(140, 350, 'start');
+    endingPipe = game.add.sprite(840, 70, 'straight2');
     createMega();
     fillWaitingRoom();
     drawWaitingRoom();
@@ -71,11 +72,11 @@ function fixLocation(item) {
     console.log(megaArray)
     var newLocX = (item.x/squareSize);
     var newLocY = (item.y/squareSize);
-    console.log(newLocX + " " + newLocY)
+    //console.log(newLocX + " " + newLocY)
     
     if (item.x < 3*squareSize || item.x > 12*squareSize || megaArray[newLocX][newLocY]!=undefined) {
         item.x = 0;
-        console.log(currentY);
+        //console.log(currentY);
         item.y = currentY*squareSize;
     }
     
@@ -87,7 +88,6 @@ function fixLocation(item) {
         item.y = newLocY*squareSize;
         console.log(newLocX+","+newLocY)
         megaArray[newLocX][newLocY] = item;
-        console.log(megaArray[0][0])
     }
 
 }
