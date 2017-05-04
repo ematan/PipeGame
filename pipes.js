@@ -102,15 +102,13 @@ function onDragStart(sprite, pointer){
 
 }
 
-
-
 //vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä. ei toimi vielä? pitää kutsua tätä funktiota silloin, kun yritetään liikuttaa putkenpalaa
-function checkPipeLocation(pipe){
+/*function checkPipeLocation(pipe){
     if((pipe.y >= 0 || pipe.y <= cheigth) && (pipe.x >= 0 || pipe.x <= squareSize)){
         enableDrag
     }
     else{unEnableDrag}
-};
+};*/
 
 //lisää putken peliruudukkoon
 function addPipe(pipe, x, y){
@@ -122,14 +120,3 @@ function deletePipe(pipe, x, y){
     delete megaArray[pipe[x]][pipe[y]];
 };
 
-//tarkistaa, että menevätkö putket päällekäin peliruudukolla. Jos menee, niin pitäisi palauttaa alkuperäiselle paikalle.
-/*function checkOverlap(){
-    for(var i=0; i<7; i++){
-        for(var j=0; i<7; i++){
-            if (megaArray[i].[j])) {
-            //palauta raahattava putki takasin paikallensa.
-        
-            }
-        }
-    }
-};*/

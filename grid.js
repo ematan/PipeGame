@@ -28,6 +28,8 @@ function fillWaitingRoom(){
     }
 };
 
+console.log(waitingRoom)
+
 //tässä luodaan itse peliruudukko
 var megaArray = new Array(9);
 function createMega(){

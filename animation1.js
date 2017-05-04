@@ -55,7 +55,7 @@ function drawWaitingRoom(){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
     enableDrag(x);
-   x.input.enableSnap(squareSize, squareSize, false, true);
+    x.input.enableSnap(squareSize, squareSize, false, true);
     var a = i;
     //x.events.onDragStart.add(function(){latestY=a});
     x.events.onDragStop.add(fixLocation, this);
@@ -82,20 +82,16 @@ function fixLocation(item) {
     
     else{
         unEnableDrag(item)
+        console.log(item.y/squareSize)
         var newLocX = (item.x/squareSize);
         var newLocY = (item.y/squareSize);
         item.x = newLocX*squareSize;
         item.y = newLocY*squareSize;
-        console.log(newLocX+","+newLocY)
+        //console.log(newLocX+","+newLocY)
         megaArray[newLocX][newLocY] = item;
+        //tässä alla yritän luoda uuttaa putkea otetun tilalle, mutta ei vielä jostain syystä toimi
+        waitingRoom[item.y/squareSize] = createPipe();
     }
 
-}
-
-
-/*function enableDragWaiting(){
-    for(var i=0; i<7; i++){
-        enableDrag(waitingRoom[i]);
-    }
 };
-*/
+
