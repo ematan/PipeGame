@@ -29,8 +29,6 @@ function create() {
     drawWaitingRoom();
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
-
-
 }
 
 function update() {
