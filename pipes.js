@@ -142,18 +142,22 @@ function updateNextFromMega(dir){
  if(dir==3) return nextCoord = [nextCoord[0],nextCoord[1]+1];
  if(dir==4) return nextCoord = [nextCoord[0]-1,nextCoord[1]];
 };
- 
+
 //checkNext(startCoord,2)
 
 function checkNext(coords, prevDir){
   //voittoehto
   if(coords == [12,1]){  console.log("WINWIN!!")} //wingame
   else if(coords[0] <3 || coords[0]>11 || coords[1]<0 || coords[1]>6 ){console.log("LOSE :(")} //endgame
+  else if(megaArray[coords[0]][coords[1]] == undefined){
+    console.log("loppui: "+ coords)
+    nextCoord=startCoord
+  }
   else{
-    console.log(coords + " + " + prevDir)
+    console.log(coords + " + PrevDir:" + prevDir)
     //isdefined
     var pipeName = megaArray[coords[0]][coords[1]].key;
-    var tyyppi = allPipes.indexOf(pipeName);
+    var tyyppi = megaArray[coords[0]][coords[1]].customPipeIndex//allPipes.indexOf(pipeName);   ///voiko spritelle antaa ylimääräisiä tietoja/parametrejä
     var comingDir = oppositeDir(prevDir);    // 4
     var indeksi = allPipes[tyyppi].open.indexOf(comingDir);
     if(indeksi==-1){
@@ -164,14 +168,15 @@ function checkNext(coords, prevDir){
       connectedArray.push(coords);
       var direction;
       if (indeksi==0){
-        direction = pipe.open[1]
+        direction = allPipes[tyyppi].open[1]
       }else{
-        direction =pipe.open[0]
+        direction = allPipes[tyyppi].open[0]
       };
       updateNextFromMega(direction);
-      if (megaArray[nextCoord[0]][nextCoord[1]] != undefined){
+      console.log("NextCoord: " + nextCoord);
+
         checkNext(nextCoord, direction)
-      }
+
     }
   }
 }

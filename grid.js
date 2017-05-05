@@ -55,6 +55,7 @@ var latestY = 0;
 function drawWaitingRoom(){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
+    x.customPipeIndex = allPipes.indexOf(waitingRoom[i])
     enableDrag(x);
     x.input.enableSnap(squareSize, squareSize, false, true);
     var a = i;
@@ -96,9 +97,9 @@ function fixLocation(item) {
         //tässä alla yritän luoda uuttaa putkea otetun tilalle, mutta ei vielä jostain syystä toimi
 
         waitingRoom[currentY] = createPipe();
-        //checkNext(startCoord,2);
+        checkNext(startCoord,2);
         updateW=true;
         //waitingRoom[item.y/squareSize] = createPipe();
     }
- 
+
 };
