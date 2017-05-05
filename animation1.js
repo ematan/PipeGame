@@ -77,7 +77,7 @@ function fixLocation(item) {
     var newLocY = (item.y/squareSize);
     //console.log(newLocX + " " + newLocY)
     console.log(newLocY + "-yLoc");
-    if (item.x < 3*squareSize || item.x > 12*squareSize || megaArray[newLocX][newLocY]!=undefined) {
+    if (item.x < 3*squareSize || item.x > 11*squareSize || megaArray[newLocX][newLocY]!=undefined) {
         item.x = 0;
         //console.log(currentY);
         item.y = currentY*squareSize;
