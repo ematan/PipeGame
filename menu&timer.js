@@ -26,9 +26,10 @@ function createPause() {
         game.paused = true;
         // Then add the menu
         menu = game.add.sprite(gridW/2, gridH/2, 'menu');
-        menu.anchor.setTo(0.5, 0.5);
+        menu.scale.setTo(0.5,0.5);
+        menu.anchor.setTo(0.3, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
-        choiseLabel = game.add.text(gridW/2+50, gridH-150, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
+        choiseLabel = game.add.text(gridW/2+80, gridH-110, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
         choiseLabel.anchor.setTo(0.5, 0.5);
     });
 
