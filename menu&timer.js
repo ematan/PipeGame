@@ -25,7 +25,7 @@ function createPause() {
         // When the paus button is pressed, we pause the game
         game.paused = true;
         // Then add the menu
-        menu = game.add.sprite(gridW/2, gridH/2, 'valikko.png');
+        menu = game.add.sprite(gridW/2, gridH/2, 'menu');
         menu.anchor.setTo(0.5, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
         choiseLabel = game.add.text(gridW/2+50, gridH-150, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
