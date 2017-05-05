@@ -19,7 +19,7 @@ function updateCounter() {
 function createPause() {
     //Code for the pause menu
     //Create a label to use as a button
-    pause_label = game.add.text(600, 530, 'Pause', { font: '24px Arial', fill: '#e00000' });
+    pause_label = game.add.text(600, 530, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game
@@ -29,11 +29,7 @@ function createPause() {
         menu.scale.setTo(0.5,0.5);
         menu.anchor.setTo(0.3, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
-<<<<<<< HEAD
         choiseLabel = game.add.text(gridW/2+80, gridH-110, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
-=======
-        choiseLabel = game.add.text(gridW/2, gridH-150, 'Klikkaa valikon ulkopuolella jatkaaksesi', { font: '30px Arial', fill: '#e00000' });
->>>>>>> origin/master
         choiseLabel.anchor.setTo(0.5, 0.5);
     });
 
