@@ -19,7 +19,7 @@ function updateCounter() {
 function createPause() {
     //Code for the pause menu
     //Create a label to use as a button
-    pause_label = game.add.text(600, 530, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
+    pause_label = game.add.text(600, 500, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game

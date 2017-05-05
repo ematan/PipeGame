@@ -36,7 +36,7 @@ function create() {
 }
  
 function render() {
-    game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 550, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
+    game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
 }
 
 var updateW = false
