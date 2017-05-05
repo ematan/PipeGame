@@ -31,10 +31,15 @@ function create() {
     //game.add.sprite(0, 0, 'fisu');
 }
 
+var updateW = false
+
 function update() {
     game.input.onDown.add(updateY, this)
     //fillWaitingRoom();
-    //drawWaitingRoom();
+    if(updateW){
+      drawWaitingRoom();
+      updateW =false
+    }
 }
 
 function updateY(){
@@ -71,13 +76,13 @@ function fixLocation(item) {
     var newLocX = (item.x/squareSize);
     var newLocY = (item.y/squareSize);
     //console.log(newLocX + " " + newLocY)
-    
+    console.log(newLocY + "-yLoc");
     if (item.x < 3*squareSize || item.x > 12*squareSize || megaArray[newLocX][newLocY]!=undefined) {
         item.x = 0;
         //console.log(currentY);
         item.y = currentY*squareSize;
     }
-    
+
     else{
         unEnableDrag(item)
         console.log(item.y/squareSize)
@@ -85,11 +90,16 @@ function fixLocation(item) {
         var newLocY = (item.y/squareSize);
         item.x = newLocX*squareSize;
         item.y = newLocY*squareSize;
-        //console.log(newLocX+","+newLocY)
+        console.log(newLocX+","+newLocY)
+
+        console.log("Array1:" + megaArray[newLocX][newLocY])
         megaArray[newLocX][newLocY] = item;
+        console.log("Array2:" + megaArray[newLocX][newLocY])
         //tässä alla yritän luoda uuttaa putkea otetun tilalle, mutta ei vielä jostain syystä toimi
-        waitingRoom[item.y/squareSize] = createPipe();
+
+        waitingRoom[currentY] = createPipe();
+        updateW=true
+        //waitingRoom[item.y/squareSize] = createPipe();
     }
 
 };
-
