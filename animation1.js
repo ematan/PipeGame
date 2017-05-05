@@ -13,6 +13,7 @@ function preload() {
     game.load.image('corner2', 'putket/corner2.png');
     game.load.image('corner3', 'putket/corner3.png');
     game.load.image('corner4', 'putket/corner4.png');
+    game.load.image('menu', 'valikko.png');
     //Tällä ladataan spritet (esim. ne kalat)
     //game.load.spritesheet('fisu', 'assets/dude.png', 32, 48);
 }
