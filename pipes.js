@@ -9,6 +9,7 @@ var straight1={
     down: true,
     left: false,
     rigth: false,
+    open: [1,3],    //up:1, down:3, left:4, right:2
     img: 'straight1',
     origY: 0
 };
@@ -17,6 +18,7 @@ var straight2={
     down: false,
     left: true,
     rigth: true,
+    open: [2,4],
     img: 'straight2',
     origY: 0
 };
@@ -25,6 +27,7 @@ var corner1={
     down: false,
     left: false,
     rigth: true,
+    open: [1,2],
     img: 'corner1',
     origY: 0
 };
@@ -33,6 +36,7 @@ var corner2={
     down: true,
     left: false,
     rigth: true,
+    open: [2,3],
     img: 'corner2',
     origY: 0
 };
@@ -41,6 +45,7 @@ var corner3={
     down: true,
     left: true,
     rigth: false,
+    open: [3,4],
     img: 'corner3',
     origY: 0
 };
@@ -49,6 +54,7 @@ var corner4={
     down: false,
     left: true,
     rigth: false,
+    open: [1,4],
     img: 'corner4',
     origY: 0
 };
@@ -57,6 +63,7 @@ var startingPipe={
     down: false,
     left: false,
     rigth: true,
+    open: [2],
     img: 'start'
 };
 var allPipes = [
@@ -75,7 +82,6 @@ function getRandomInteger(min, max) {
 
 function randomPipe(){
     var x = getRandomInteger(0, (allPipes.length-1));
-    console.log(x)
     return x
 }
 
@@ -120,3 +126,52 @@ function deletePipe(pipe, x, y){
     delete megaArray[pipe[x]][pipe[y]];
 };
 
+var connectedArray = [];
+function oppositeDir(prevDir){
+  if(prevDir==1) return 3;
+  if(prevDir==2) return 4;
+  if(prevDir==3) return 1;
+  if(prevDir==4) return 2;
+};
+
+var startCoord = [3, 5]
+var nextCoord = startCoord
+function updateNextFromMega(dir){
+ if(dir==1) return nextCoord = [nextCoord[0],nextCoord[1]-1];
+ if(dir==2) return nextCoord = [nextCoord[0]+1,nextCoord[1]];
+ if(dir==3) return nextCoord = [nextCoord[0],nextCoord[1]+1];
+ if(dir==4) return nextCoord = [nextCoord[0]-1,nextCoord[1]];
+};
+
+//checkNext(startCoord,2)
+
+function checkNext(coords, prevDir){
+  //voittoehto
+  if(coords == [12,1]){  console.log("WINWIN!!")} //wingame
+  else if(coords[0] <3 || coords[0]>11 || coords[1]<0 || coords[1]>6 ){console.log("LOSE :(")} //endgame
+  else{
+    console.log(coords + " + " + prevDir)
+    //isdefined
+    var pipeName = megaArray[coords[0]][coords[1]].key;
+    var tyyppi = allPipes.indexOf(pipeName);
+    var comingDir = oppositeDir(prevDir);    // 4
+    var indeksi = allPipes[tyyppi].open.indexOf(comingDir);
+    if(indeksi==-1){
+    //stop execution here
+      nextCoord=startCoord
+      console.log(connectedArray)
+    }else{
+      connectedArray.push(coords);
+      var direction;
+      if (indeksi==0){
+        direction = pipe.open[1]
+      }else{
+        direction =pipe.open[0]
+      };
+      updateNextFromMega(direction);
+      if (megaArray[nextCoord[0]][nextCoord[1]] != undefined){
+        checkNext(nextCoord, direction)
+      }
+    }
+  }
+}
