@@ -19,7 +19,7 @@ function updateCounter() {
 function createPause() {
     //Code for the pause menu
     //Create a label to use as a button
-    pause_label = game.add.text(600, 530, 'Pause', { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
+    pause_label = game.add.text(600, 530, 'Pause', { font: '24px Arial', fill: '#e00000' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game
@@ -29,7 +29,11 @@ function createPause() {
         menu.scale.setTo(0.5,0.5);
         menu.anchor.setTo(0.3, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
+<<<<<<< HEAD
         choiseLabel = game.add.text(gridW/2+80, gridH-110, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
+=======
+        choiseLabel = game.add.text(gridW/2, gridH-150, 'Klikkaa valikon ulkopuolella jatkaaksesi', { font: '30px Arial', fill: '#e00000' });
+>>>>>>> origin/master
         choiseLabel.anchor.setTo(0.5, 0.5);
     });
 
@@ -51,26 +55,26 @@ function createPause() {
                 // Get menu local coordinates for the click
                 var x = event.x - x1,
                     y = event.y - y1;
-                // Calculate the choice 
+                // Calculate the choice
                 var choise = Math.floor(x / 90) + 3*Math.floor(y / 90);
                 // Display the choice
                 if(choisemap[choise]=='taso1'){
-                    
+
                 }
                 else if(choisemap[choise]=='taso2'){
-                    
+
                 }
                 else if(choisemap[choise]=='taso3'){
-                    
+
                 }
                 else if(choisemap[choise]=='äänet'){
-                    
+
                 }
                 else if(choisemap[choise]=='ohjeet'){
-                    
+
                 }
                 else if(choisemap[choise]=='tekijät'){
-                    
+
                 }
             }
             else{
