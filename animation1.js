@@ -1,11 +1,11 @@
-var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render });
+var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render }, true);
 
 var gridH = 490;
 var gridW = 735;
 var squareSize = 70;
 
 function preload() {
-    game.stage.backgroundColor = '#005a77';
+    game.stage.backgroundColor = '';
     game.load.image('start', 'putket/start.png');
     game.load.image('straight1', 'putket/straight1.png');
     game.load.image('straight2', 'putket/straight2.png');
@@ -48,46 +48,6 @@ function update() {
       drawWaitingRoom();
       updateW =false
     }
-    //BH.progress.drawRoundedRect(101,501,298*percentDone,25,10);
 }
 
 
-
-
-/*
-var progress = game.add.image(0, 0, "rectangle.jpg");
-progress.width = 0;
-progress.initialWidth = 300 // the original image width in pixels// then on
-updateprogress.width = percentDone*progress.initialWidth; // percentDone should be in decimals
-//20% = 0.2// so this will finaly result in
-//1 * 300 = 100%
-
-
-var drawTimer = function(startX, startY, w, h) {
-
-    var gfx = game.add.graphics(startX, startY);
-    gfx.lineStyle(3, 0xffffff, 5);
-
-    for (x=startX; x<=w; x+=11*squareSize) {
-        for (y=startY; y<=h; y+=squareSize) {
-            gfx.moveTo(x, startY);
-            gfx.lineTo(x, h);
-            gfx.endFill();
-            gfx.moveTo(startX, y);
-            gfx.lineTo(w, y);
-            gfx.endFill();
-        }
-    }
-};
-
-
-var progress = {
-    game.add.graphics(0,0);
-    progress.lineStyle(2, '0x000000');
-    //For drawing progress
-    progress.beginFill('0x000000',1);
-    progress.drawRoundedRect(100,500,300,27,10);
-    progress.endFill();
-    progress.beginFill('0x999999',1);
-}
-*/

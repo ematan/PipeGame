@@ -33,7 +33,6 @@ console.log(waitingRoom)
 //tässä luodaan itse peliruudukko
 var megaArray = new Array(9);
 function createMega(){
-  console.log("its happening")
   for (var i = 0; i < 12; i++) {
     megaArray[i] = new Array(7);
   }
@@ -68,8 +67,6 @@ function drawWaitingRoom(){
 };
 
 function fixLocation(item) {
-    //var origLocY = location*squareSize;
-    //console.log(item.x);
     // Move the items when it is already dropped.
     console.log(megaArray)
     var newLocX = (item.x/squareSize);
