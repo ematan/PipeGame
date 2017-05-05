@@ -58,7 +58,7 @@ function createTimer() {
     //  Create our Timer
     timer = game.time.create(false);
     //  Set a TimerEvent to occur after 1 minute
-    timer.loop(60000, updateCounter, this);
+    timer.loop(65000, updateCounter, this);
     //  Start the timer running - this is important!
     //  It won't start automatically, allowing you to hook it to button events and the like.
     timer.start();
