@@ -29,7 +29,7 @@ function createPause() {
         menu.scale.setTo(0.5,0.5);
         menu.anchor.setTo(0.3, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
-        choiseLabel = game.add.text(gridW/2+80, gridH-110, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
+        choiseLabel = game.add.text(gridW/2+110, gridH-100, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
         choiseLabel.anchor.setTo(0.5, 0.5);
     });
 
