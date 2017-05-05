@@ -100,5 +100,5 @@ function fixLocation(item) {
         updateW=true;
         //waitingRoom[item.y/squareSize] = createPipe();
     }
-
+ 
 };

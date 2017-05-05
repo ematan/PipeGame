@@ -15,7 +15,7 @@ function createTimer() {
 function updateCounter() {
     total++;
 };
-
+ 
 function createPause() {
     //Code for the pause menu
     //Create a label to use as a button
@@ -50,26 +50,26 @@ function createPause() {
                 // Get menu local coordinates for the click
                 var x = event.x - x1,
                     y = event.y - y1;
-                // Calculate the choice 
+                // Calculate the choice
                 var choise = Math.floor(x / 90) + 3*Math.floor(y / 90);
                 // Display the choice
                 if(choisemap[choise]=='taso1'){
-                    
+
                 }
                 else if(choisemap[choise]=='taso2'){
-                    
+
                 }
                 else if(choisemap[choise]=='taso3'){
-                    
+
                 }
                 else if(choisemap[choise]=='äänet'){
-                    
+
                 }
                 else if(choisemap[choise]=='ohjeet'){
-                    
+
                 }
                 else if(choisemap[choise]=='tekijät'){
-                    
+
                 }
             }
             else{

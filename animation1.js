@@ -34,7 +34,7 @@ function create() {
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
 }
-
+ 
 function render() {
     game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 550, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
 }
@@ -57,9 +57,9 @@ function update() {
 /*
 var progress = game.add.image(0, 0, "rectangle.jpg");
 progress.width = 0;
-progress.initialWidth = 300 // the original image width in pixels// then on 
-updateprogress.width = percentDone*progress.initialWidth; // percentDone should be in decimals 
-//20% = 0.2// so this will finaly result in 
+progress.initialWidth = 300 // the original image width in pixels// then on
+updateprogress.width = percentDone*progress.initialWidth; // percentDone should be in decimals
+//20% = 0.2// so this will finaly result in
 //1 * 300 = 100%
 
 
@@ -88,6 +88,6 @@ var progress = {
     progress.beginFill('0x000000',1);
     progress.drawRoundedRect(100,500,300,27,10);
     progress.endFill();
-    progress.beginFill('0x999999',1); 
+    progress.beginFill('0x999999',1);
 }
 */

@@ -142,7 +142,7 @@ function updateNextFromMega(dir){
  if(dir==3) return nextCoord = [nextCoord[0],nextCoord[1]+1];
  if(dir==4) return nextCoord = [nextCoord[0]-1,nextCoord[1]];
 };
-
+ 
 //checkNext(startCoord,2)
 
 function checkNext(coords, prevDir){
