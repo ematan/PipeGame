@@ -41,7 +41,7 @@ function createPause() {
         // Only act if paused
         if(game.paused){
             // Calculate the corners of the menu
-            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2,
+            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+135,
                 y1 = gridH/2 - 180/2, y2 = gridH/2 + 180/2;
 
             // Check if the click was inside the menu
