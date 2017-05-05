@@ -94,12 +94,10 @@ function fixLocation(item) {
         console.log("Array1:" + megaArray[newLocX][newLocY])
         megaArray[newLocX][newLocY] = item;
         console.log("Array2:" + megaArray[newLocX][newLocY])
-        //tässä alla yritän luoda uuttaa putkea otetun tilalle, mutta ei vielä jostain syystä toimi
-
+        //tässä alla luodaan uuttaa putkea otetun tilalle
         waitingRoom[currentY] = createPipe();
         checkNext(startCoord,2);
         updateW=true;
-        //waitingRoom[item.y/squareSize] = createPipe();
     }
 
 };

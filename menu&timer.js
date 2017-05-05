@@ -19,16 +19,17 @@ function updateCounter() {
 function createPause() {
     //Code for the pause menu
     //Create a label to use as a button
-    pause_label = game.add.text(600, 530, 'Pause', { font: '24px Arial', fill: '#e00000' });
+    pause_label = game.add.text(600, 500, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game
         game.paused = true;
         // Then add the menu
         menu = game.add.sprite(gridW/2, gridH/2, 'menu');
-        menu.anchor.setTo(0.5, 0.5);
+        menu.scale.setTo(0.5,0.5);
+        menu.anchor.setTo(0.3, 0.5);
         // And a label to illustrate which menu item was chosen. (This is not necessary)
-        choiseLabel = game.add.text(gridW/2, gridH-150, 'Klikkaa valikon ulkopuolella jatkaaksesi', { font: '30px Arial', fill: '#e00000' });
+        choiseLabel = game.add.text(gridW/2+80, gridH-110, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
         choiseLabel.anchor.setTo(0.5, 0.5);
     });
 
@@ -40,7 +41,7 @@ function createPause() {
         // Only act if paused
         if(game.paused){
             // Calculate the corners of the menu
-            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2,
+            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+135,
                 y1 = gridH/2 - 180/2, y2 = gridH/2 + 180/2;
 
             // Check if the click was inside the menu

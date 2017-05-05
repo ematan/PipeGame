@@ -6,3 +6,13 @@ canvas {
 body {
     background-color: #005a77;
 }
+
+#this {
+    text-align: center;
+    margin : auto;
+}
+
+#otsikko {
+    font: bold 40px 'Annie Use Your Telescope';
+    color: #ff2626;
+}
