@@ -96,7 +96,7 @@ function fixLocation(item) {
         //tässä alla yritän luoda uuttaa putkea otetun tilalle, mutta ei vielä jostain syystä toimi
 
         waitingRoom[currentY] = createPipe();
-        checkNext(startLoc,2);
+        //checkNext(startCoord,2);
         updateW=true;
         //waitingRoom[item.y/squareSize] = createPipe();
     }
