@@ -1,4 +1,4 @@
-var game = new Phaser.Game(900, 590, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render });
 
 var gridH = 490;
 var gridW = 735;
@@ -35,7 +35,7 @@ function create() {
 }
 
 function render() {
-    game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 32, 550);
+    game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 550, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
 }
 
 var updateW = false
