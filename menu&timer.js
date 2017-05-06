@@ -6,7 +6,7 @@ function createTimer() {
     //  Create our Timer
     timer = game.time.create(false);
     //  Set a TimerEvent to occur after 1 minute
-    timer.loop(65000, updateCounter, this);
+    timer.loop(120000, updateCounter, this);
     //  Start the timer running - this is important!
     //  It won't start automatically, allowing you to hook it to button events and the like.
     timer.start();
@@ -41,7 +41,7 @@ function createPause() {
         // Only act if paused
         if(game.paused){
             // Calculate the corners of the menu
-            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+135,
+            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+160,
                 y1 = gridH/2 - 180/2, y2 = gridH/2 + 180/2;
 
             // Check if the click was inside the menu
