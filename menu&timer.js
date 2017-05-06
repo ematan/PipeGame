@@ -1,5 +1,6 @@
 var timer;
 var total = 0;
+var playMusic = true;
 
 function createTimer() {
     //game.stage.backgroundColor = '#000';
@@ -64,7 +65,15 @@ function createPause() {
 
                 }
                 else if(choisemap[choise]=='äänet'){
-
+                    console.log("äänet toimii")
+                    if(playMusic==true){
+                        game.input.onDown.add(pauseMusic, this);
+                        playMusic=false
+                    }
+                    else if(playMusic==false){
+                        game.input.onDown.add(resumeMusic, this);
+                        playMusic=true
+                    }
                 }
                 else if(choisemap[choise]=='ohjeet'){
 
@@ -84,3 +93,5 @@ function createPause() {
         }
     };
 }
+
+
