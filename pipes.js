@@ -164,6 +164,9 @@ function checkNext(coords, prevDir){
     //isdefined
     var pipeName = megaArray[coords[0]][coords[1]].key;
     var tyyppi = megaArray[coords[0]][coords[1]].customPipeIndex//allPipes.indexOf(pipeName);   ///voiko spritelle antaa ylimääräisiä tietoja/parametrejä
+    if(allPipes[tyyppi]== undefined){
+      lose=true
+    }else{
     var comingDir = oppositeDir(prevDir);    // 4
     var indeksi = allPipes[tyyppi].open.indexOf(comingDir);
     if(indeksi==-1){
@@ -185,5 +188,6 @@ function checkNext(coords, prevDir){
         checkNext(nextCoord, direction)
 
     }
+  }
   }
 }
