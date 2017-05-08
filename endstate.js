@@ -11,7 +11,7 @@ winGame.prototype = {
   playButton.anchor.setTo(0.5,0.5);
   },
   playTheGame: function(){
-  this.game.state.start("level1",true,true);
+  this.game.state.start("level1");
   }
 }
 
