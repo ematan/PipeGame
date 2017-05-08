@@ -4,7 +4,7 @@ var boot = function(game){
 
 boot.prototype = {
 	preload: function(){
-          
+
 	},
   	create: function(){
 		//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -36,6 +36,11 @@ preload.prototype = {
           this.game.load.image('menu', 'valikko.png');
           this.game.load.audio('mystery', 'sea.mp3');
           this.game.load.image('aloitaPeli', 'aloitaPeli.jpg');
+          this.game.load.image('lvl1', 'menu/lvl1.png');
+          this.game.load.image('lvl2', 'menu/lvl2.png');
+          this.game.load.image('lvl3', 'menu/lvl3.png');
+          this.game.load.image('sound', 'menu/sound.png');
+          this.game.load.image('valikkoon', 'menu/valikkoon.png');
           this.game.load.spritesheet('shark', 'meri/shark.png', 142, 121, 7);
           this.game.load.spritesheet('jellyfish', 'meri/jellyfish1.png', 288/6, 47, 6);
 	},
