@@ -5,8 +5,6 @@ var music;
 
 startGame.prototype = {
   	create: function(){
-        music = this.game.add.audio('mystery');
-        music.loopFull();
         
 		var play1 = this.game.add.button(this.game.world.centerX,this.game.world.centerY-200,"aloitaPeli",this.playLevel1,this);
         play1.scale.setTo(0.6, 0.6);
