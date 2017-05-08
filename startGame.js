@@ -1,5 +1,10 @@
 var startGame = function(game){}
 
+var playMusic = true;
+var music;
+music = game.add.audio('mystery');
+music.loopFull();
+
 startGame.prototype = {
   	create: function(){
 		var play1 = this.game.add.button(this.game.world.centerX,this.game.world.centerY-200,"aloitaPeli",this.playLevel1,this);
@@ -28,6 +33,13 @@ startGame.prototype = {
 		this.game.state.start("level3");
 	},
     soundCheck: function(){
-		
+		if(playMusic==true){
+            game.input.onDown.add(music.pause();, this);
+            playMusic=false
+        }
+        else if(playMusic==false){
+            game.input.onDown.add(music.resume();, this);
+            playMusic=true
+        }
 	}
 }
