@@ -14,7 +14,7 @@ var level2 = function(game){}
           endingPipe = this.game.add.sprite(840, 70, 'straight2');
           createMega();
           fillWaitingRoom();
-          
+
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);

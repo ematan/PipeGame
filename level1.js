@@ -26,6 +26,12 @@ var level1 = function(game){}
           drawWaitingRoom(this.game);
           updateW =false
         }
+        if(win){
+          this.game.state.start("winGame")
+        }
+        if(lose){
+          this.game.state.start("loseGame")
+        }
     },
     render: function(){
         //game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
