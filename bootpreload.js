@@ -37,8 +37,8 @@ preload.prototype = {
           this.game.load.audio('mystery', 'mystery.mp3');
           this.game.load.image('aloitaPeli', 'aloitaPeli.jpg');
           this.game.load.spritesheet('mermaid', 'meri/mermaid.png', 32, 48, 16);
-          this.game.load.spritesheet('shark', 'meri/shark1.png', 142, 121, 7);
-          this.game.load.spritesheet('jellyfish', 'meri/jellyfish.png', 66, 72, 5);
+          this.game.load.spritesheet('shark', 'meri/shark.png', 142, 121, 7);
+          this.game.load.spritesheet('jellyfish', 'meri/jellyfish1.png', 288/6, 47, 6);
 	},
   	create: function(){
 		this.game.state.start("startGame");

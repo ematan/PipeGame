@@ -14,15 +14,24 @@ var level2 = function(game){}
           endingPipe = this.game.add.sprite(840, 70, 'straight2');
           createMega();
           fillWaitingRoom();
-          var mermaid = game.add.sprite(300, 200, 'mermaid');
-          var turn = mermaid.animations.add('turn');
-          mermaid.animations.play('turn', 30, true);
-          var shark = game.add.sprite(400, 200, 'shark');
+          /*var shark = this.game.add.sprite(558, 75, 'shark');
           var swim = shark.animations.add('swim');
-          shark.animations.play('swim', 30, true);
-          var jellyfish = game.add.sprite(400, 200, 'fellyfish');
+          shark.animations.play('swim', 10, true);*/
+          var jellyfish = this.game.add.sprite(285, 210, 'jellyfish');
           var wiggle = jellyfish.animations.add('wiggle');
-          jellyfish.animations.play('wiggle', 30, true);
+          jellyfish.animations.play('wiggle', 5, true);
+          jellyfish.scale.setTo(1.3, 1.3);
+          megaArray[4][3]="defined"
+          var jellyfish2 = this.game.add.sprite(635, 350, 'jellyfish');
+          var wiggle = jellyfish2.animations.add('wiggle');
+          jellyfish2.animations.play('wiggle', 5, true);
+          jellyfish2.scale.setTo(1.3, 1.3);
+          megaArray[9][5]="defined"
+          var jellyfish3 = this.game.add.sprite(495, 140, 'jellyfish');
+          var wiggle = jellyfish3.animations.add('wiggle');
+          jellyfish3.animations.play('wiggle', 5, true);
+          jellyfish3.scale.setTo(1.3, 1.3);
+          megaArray[9][5]="defined"
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);
@@ -41,19 +50,3 @@ var level2 = function(game){}
         //game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
     }
   };
-
-
-function create() {
-
-    var mermaid = game.add.sprite(300, 200, 'mermaid');
-
-    //  Here we add a new animation called 'walk'
-    //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'mummy' sprite sheet
-    var walk = mummy.animations.add('turn');
-
-    //  And this starts the animation playing by using its key ("walk")
-    //  30 is the frame rate (30fps)
-    //  true means it will loop when it finishes
-    mummy.animations.play('turn', 30, true);
-
-}
