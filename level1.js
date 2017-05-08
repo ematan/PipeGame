@@ -5,16 +5,17 @@ var graphics1;
   level1.prototype = {
     preload: function() {
         this.game.stage.backgroundColor = '';
+        updateW = false;
     },
     create: function() {
+      //Grid ja aikapalkin piirto
           drawGrid(1.5*squareSize, 0, gridW, gridH, this.game);
           drawGrid(0, 0, squareSize, gridH, this.game);
           var graphics = this.game.add.graphics(squareSize*3, 500);
           graphics1 = this.game.add.graphics(squareSize*3, 500);
-
           graphics.lineStyle(3, 0xFFFF0B, 1);
           graphics.drawRect(0,0, 9*squareSize, 50);
-          //drawRect(this.game);
+      //Muu alustus
           var pipesInGame = this.game.add.group();
           var pipesWaiting = this.game.add.group();
           startingPipe = this.game.add.sprite(140, 350, 'start');
@@ -23,8 +24,8 @@ var graphics1;
           fillWaitingRoom();
           drawWaitingRoom(this.game);
           createTimer(this.game);
-          //createPause(this.game);
-          //createMusic(this.game); 
+          createPause(this.game);
+          //createMusic(this.game);
     },
     update: function(){
         var a = this.game;
