@@ -2,8 +2,6 @@ var startGame = function(game){}
 
 var playMusic = true;
 var music;
-music = game.add.audio('mystery');
-music.loopFull();
 
 startGame.prototype = {
   	create: function(){
@@ -22,6 +20,9 @@ startGame.prototype = {
         var äänet = this.game.add.button(this.game.world.centerX,this.game.world.centerY+100,"aloitaPeli",this.soundCheck,this);
         äänet.scale.setTo(0.6, 0.6);
 		äänet.anchor.setTo(0.5,0.5);
+        
+        music = this.game.add.audio('mystery');
+        music.loopFull();
 	},
 	playLevel1: function(){
 		this.game.state.start("level1");
@@ -34,12 +35,12 @@ startGame.prototype = {
 	},
     soundCheck: function(){
 		if(playMusic==true){
-            game.input.onDown.add(music.pause();, this);
+            game.input.onDown.add(music.pause(), this);
             playMusic=false
         }
         else if(playMusic==false){
-            game.input.onDown.add(music.resume();, this);
+            game.input.onDown.add(music.resume(), this);
             playMusic=true
         }
 	}
-}
+};
