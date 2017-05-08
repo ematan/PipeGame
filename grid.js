@@ -39,7 +39,7 @@ function createMega(){
 };
 // näin täytetään...: x[5][12] = 3.0;
 
-function updateY(){
+function updateY(game){
   currentY = Math.floor(game.input.mousePointer.y/squareSize)
 }
 

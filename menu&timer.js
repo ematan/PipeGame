@@ -17,7 +17,7 @@ function updateCounter() {
     total++;
 };
 
-function createPause(this.game) {
+function createPause(game) {
     //Code for the pause menu
     //Create a label to use as a button
     pause_label = game.add.text(600, 500, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });

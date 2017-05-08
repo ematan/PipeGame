@@ -17,5 +17,18 @@ var level1 = function(game){}
           //createTimer();
           //createPause(this.game);
           //createMusic(this.game);
+    },
+    update: function(){
+        var a = this.game
+        this.game.input.onDown.add(function () {   updateY(a);}, this)
+        //fillWaitingRoom();
+        if(updateW){
+          drawWaitingRoom(this.game);
+          updateW =false
+        }
+    },
+    render: function(){
+        //game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
     }
-  }
+  };
+  var updateW = false
