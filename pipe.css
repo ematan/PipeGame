@@ -1,5 +1,5 @@
 canvas {   
-    display : block;   
+    display : block;
     margin : auto;
 }
 
@@ -14,5 +14,5 @@ body {
 
 #otsikko {
     font: bold 40px 'Annie Use Your Telescope';
-    color: #ff2626;
+    color: white;
 }

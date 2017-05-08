@@ -14,18 +14,34 @@ var level3 = function(game){}
           endingPipe = this.game.add.sprite(840, 70, 'straight2');
           createMega();
           fillWaitingRoom();
-          var mermaid = this.game.add.sprite(295, 215, 'mermaid');
-          var turn = mermaid.animations.add('turn');
-          /*mermaid.animations.play('turn', 4, true);
-          mermaid.scale.setTo(1.3, 1.3);
-          //mermaid.open = [8]
-          megaArray[4][3]="defined"*/
-          var shark = this.game.add.sprite(558, 75, 'shark');
+          var shark = this.game.add.sprite(558, 80, 'shark');
           var swim = shark.animations.add('swim');
           shark.animations.play('swim', 10, true);
-          /*var jellyfish = this.game.add.sprite(400, 200, 'fellyfish');
-          var wiggle = jellyfish.animations.add('wiggle');
-          jellyfish.animations.play('wiggle', 30, true);*/
+          megaArray[8][1]="defined"
+          megaArray[8][2]="defined"
+          megaArray[9][1]="defined"
+          megaArray[9][2]="defined"
+          var shark2 = this.game.add.sprite(280, 150, 'shark');
+          var swim = shark2.animations.add('swim');
+          shark2.animations.play('swim', 10, true);
+          megaArray[4][2]="defined"
+          megaArray[4][3]="defined"
+          megaArray[5][2]="defined"
+          megaArray[5][3]="defined"
+          var shark3 = this.game.add.sprite(420, 360, 'shark');
+          var swim = shark3.animations.add('swim');
+          shark3.animations.play('swim', 10, true);
+          megaArray[6][5]="defined"
+          megaArray[6][6]="defined"
+          megaArray[7][5]="defined"
+          megaArray[7][6]="defined"
+          var shark4 = this.game.add.sprite(630, 290, 'shark');
+          var swim = shark4.animations.add('swim');
+          shark4.animations.play('swim', 10, true);
+          megaArray[9][4]="defined"
+          megaArray[9][5]="defined"
+          megaArray[10][5]="defined"
+          megaArray[10][4]="defined"
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);

@@ -40,11 +40,12 @@ var graphics1;
         if(lose){
           this.game.state.start("loseGame")
         }
+        if(timer.duration.toFixed(0)<=100){
+          lose=true
+        }
     },
     render: function(){
-      if(maxTime-timer.duration.toFixed(0)==0){
-        //lose=true
-      }
+
 
       var graphics1 = this.game.add.graphics(squareSize*3, 500);
       graphics1.clear();
@@ -60,7 +61,7 @@ var graphics1;
       graphics1.lineTo(0,0);
       graphics1.endFill();
 
-      
+
         this.game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
     }
   };
