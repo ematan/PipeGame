@@ -61,6 +61,15 @@ var level3 = function(game){}
           drawWaitingRoom(this.game);
           updateW =false
         }
+        if(win){
+          this.game.state.start("winGame")
+        }
+        if(lose){
+          this.game.state.start("loseGame")
+        }
+        if(timer.duration.toFixed(0)<=100){
+          lose=true
+        }
     },
     render: function(){
       var graphics1 = this.game.add.graphics(squareSize*3, 500);
