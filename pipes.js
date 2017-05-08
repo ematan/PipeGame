@@ -151,7 +151,10 @@ function checkNext(coords, prevDir){
     console.log("WINWIN!!");
     win=true
   } //wingame
-  else if(coords[0] <3 || coords[0]>11 || coords[1]<0 || coords[1]>6 ){console.log("LOSE :(")} //endgame
+  else if(coords[0] <3 || coords[0]>11 || coords[1]<0 || coords[1]>6 ){
+    console.log("LOSE :(");
+    lose=true
+} //endgame
   else if(megaArray[coords[0]][coords[1]] == undefined){
     console.log("loppui: "+ coords)
     nextCoord=startCoord
