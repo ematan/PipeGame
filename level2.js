@@ -31,7 +31,7 @@ var level2 = function(game){}
           var wiggle = jellyfish3.animations.add('wiggle');
           jellyfish3.animations.play('wiggle', 5, true);
           jellyfish3.scale.setTo(1.3, 1.3);
-          megaArray[9][5]="defined"
+          megaArray[7][2]="defined"
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);
