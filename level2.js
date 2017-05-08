@@ -14,13 +14,9 @@ var level2 = function(game){}
           endingPipe = this.game.add.sprite(840, 70, 'straight2');
           createMega();
           fillWaitingRoom();
-<<<<<<< HEAD
           var mermaid = game.add.sprite(300, 200, 'mermaid');
           var walk = mermaid.animations.add('turn');
           mermaid.animations.play('turn', 30, true);
-=======
-
->>>>>>> origin/master
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);
