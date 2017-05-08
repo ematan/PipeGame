@@ -24,7 +24,7 @@ var graphics1;
           drawWaitingRoom(this.game);
           createTimer(this.game);
           //createPause(this.game);
-          //createMusic(this.game);
+          //createMusic(this.game); 
     },
     update: function(){
         var a = this.game;
