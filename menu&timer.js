@@ -1,13 +1,14 @@
 var timer;
 var total = 0;
 var playMusic = true;
+var maxTime = 120000;
 
-function createTimer() {
+function createTimer(game) {
     //game.stage.backgroundColor = '#000';
     //  Create our Timer
     timer = game.time.create(false);
     //  Set a TimerEvent to occur after 1 minute
-    timer.loop(120000, updateCounter, this);
+    timer.loop(maxTime, updateCounter, this);
     //  Start the timer running - this is important!
     //  It won't start automatically, allowing you to hook it to button events and the like.
     timer.start();
