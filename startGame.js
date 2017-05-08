@@ -5,6 +5,9 @@ var music;
 
 startGame.prototype = {
   	create: function(){
+        music = this.game.add.audio('mystery');
+        music.loopFull();
+        
 		var play1 = this.game.add.button(this.game.world.centerX,this.game.world.centerY-200,"aloitaPeli",this.playLevel1,this);
         play1.scale.setTo(0.6, 0.6);
 		play1.anchor.setTo(0.5,0.5);
@@ -20,9 +23,6 @@ startGame.prototype = {
         var äänet = this.game.add.button(this.game.world.centerX,this.game.world.centerY+100,"aloitaPeli",this.soundCheck,this);
         äänet.scale.setTo(0.6, 0.6);
 		äänet.anchor.setTo(0.5,0.5);
-        
-        music = this.game.add.audio('mystery');
-        music.loopFull();
 	},
 	playLevel1: function(){
 		this.game.state.start("level1");

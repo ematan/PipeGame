@@ -41,5 +41,7 @@ preload.prototype = {
 	},
   	create: function(){
 		this.game.state.start("startGame");
+        music = this.game.add.audio('mystery');
+        music.loopFull();
 	}
 }
