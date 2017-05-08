@@ -12,7 +12,7 @@ boot.prototype = {
 		//this.scale.setScreenSize();
 		this.game.state.start("Preload");
 	}
-}
+}   
 
 
 //preload alkaa tästä
