@@ -1,7 +1,7 @@
 var timer;
 var total = 0;
 var playMusic = true;
-var maxTime = 12000;
+var maxTime = 1200000;
 
 function createTimer(game) {
     //game.stage.backgroundColor = '#000';
@@ -21,18 +21,18 @@ function updateCounter() {
 function createPause(game) {
     //Code for the pause menu
     //Create a label to use as a button
-    pause_label = game.add.text(600, 500, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
+    pause_label = game.add.text(10, 510, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: 'white' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
         // When the paus button is pressed, we pause the game
         game.paused = true;
-        // Then add the menu
+        /* Then add the menu
         menu = game.add.sprite(gridW/2, gridH/2, 'menu');
         menu.scale.setTo(0.5,0.5);
         menu.anchor.setTo(0.3, 0.5);
-        // And a label to illustrate which menu item was chosen. (This is not necessary)
+        And a label to illustrate which menu item was chosen. (This is not necessary)
         choiseLabel = game.add.text(gridW/2+110, gridH-100, 'Klikkaa valikon ulkopuolella aloittaaksesi/jatkaaksesi', { font: 'bold 30px Annie Use Your Telescope', fill: '#ff2626' });
-        choiseLabel.anchor.setTo(0.5, 0.5);
+        choiseLabel.anchor.setTo(0.5, 0.5);*/
     });
 
     // Add a input listener that can help us return from being paused
@@ -42,7 +42,8 @@ function createPause(game) {
     function unpause(event){
         // Only act if paused
         if(game.paused){
-            // Calculate the corners of the menu
+            game.paused = false;
+            /* Calculate the corners of the menu
             var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+165,
                 y1 = gridH/2 - 180/2, y2 = gridH/2 + 180/2;
 
@@ -81,16 +82,15 @@ function createPause(game) {
                 }
                 else if(choisemap[choise]=='tekijät'){
                     console.log("tekijät")
-                }
+                }*/
             }
-            else{
-                // Remove the menu and the label
+            /*else{
+                //Remove the menu and the label
                 menu.destroy();
                 choiseLabel.destroy();
 
-                // Unpause the game
+                //Unpause the game
                 game.paused = false;
-            }
+            }*/
         }
     };
-}
