@@ -20,10 +20,10 @@
         <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
         <script>
 			(function() {
-				var game = new Phaser.Game(900, 590, Phaser.CANVAS, 'game'/*, true*/);
-                game.state.add("startGame", startGame);
+				var game = new Phaser.Game(900, 590, Phaser.CANVAS, 'game', null,  true);
                 game.state.add("Boot", boot);
                 game.state.add("Preload", preload);
+                game.state.add("startGame", startGame);
                 game.state.add("level1", level1);
 				game.state.add("level2", level2);
 				game.state.add("level3", level3);
