@@ -19,8 +19,8 @@ var level1 = function(game){}
           //createMusic(this.game);
     },
     update: function(){
-        var a = this.game
-        this.game.input.onDown.add(function () {   updateY(a);}, this)
+        var a = this.game;
+        this.game.input.onDown.add(function () {updateY(a);}, this)
         //fillWaitingRoom();
         if(updateW){
           drawWaitingRoom(this.game);
