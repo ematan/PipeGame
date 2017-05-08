@@ -1,4 +1,4 @@
-var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render }, true);
+//var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render }, true);
 
 var gridH = 490;
 var gridW = 735;

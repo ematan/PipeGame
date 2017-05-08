@@ -20,22 +20,22 @@
         <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
         <script>
 			(function() {
-				var game = new Phaser.Game(900, 590, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render }, true);
+				var game = new Phaser.Game(900, 590, Phaser.CANVAS, 'game'/*, true*/);
                 game.state.add("startGame", startGame);
                 game.state.add("Boot", boot);
                 game.state.add("Preload", preload);
                 game.state.add("level1", level1);
-				        game.state.add("level2", level2);
-				        game.state.add("level3", level3);
-				        game.state.add("GameOver",gameOver);
-				        game.state.start("Boot");
+				game.state.add("level2", level2);
+				game.state.add("level3", level3);
+				game.state.add("GameOver",gameOver);
+				game.state.start("Boot");
 			})();
 		</script>
     </head>
 
     <body>
         <div id='this'>
-            <headline id='otsikko'>RAKENNA OMA BALTICCONNECTOR</headline>
+            <headline id='otsikko'>RAKENNA OMA BALTICCONNECTOR!</headline>
         </div>
     </body>
 
