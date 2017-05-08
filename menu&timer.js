@@ -1,7 +1,7 @@
 var timer;
 var total = 0;
 var playMusic = true;
-var maxTime = 12000;
+var maxTime = 1200000;
 
 function createTimer(game) {
     //game.stage.backgroundColor = '#000';
