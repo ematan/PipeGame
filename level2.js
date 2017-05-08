@@ -35,7 +35,6 @@ var level2 = function(game){}
         //game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
     }
   };
-<<<<<<< HEAD
 
 
 
@@ -53,5 +52,3 @@ function create() {
     mummy.animations.play('turn', 30, true);
 
 }
-=======
->>>>>>> origin/master
