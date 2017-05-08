@@ -12,11 +12,13 @@ boot.prototype = {
 		//this.scale.setScreenSize();
 		this.game.state.start("Preload");
 	}
-}   
+}
 
 
 //preload alkaa tästä
-var preload = function(game){}
+var preload = function(game){
+  console.log("%cLataa peli", "color:white; background:red");
+}
 
 preload.prototype = {
 	preload: function(){

@@ -3,7 +3,7 @@ var level1 = function(game){}
   level1.prototype = {
     preload: function() {
         this.game.stage.backgroundColor = '';
-    }
+    },
     create: function() {
           drawGrid(1.5*squareSize, 0, gridW, gridH);
           drawGrid(0, 0, squareSize, gridH);
