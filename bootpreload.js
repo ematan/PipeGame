@@ -4,11 +4,11 @@ var boot = function(game){
 
 boot.prototype = {
 	preload: function(){
-          //latauskuva?? this.game.load.image("loading","assets/loading.png");
+          this.game.load.image("vaaalikko","valikko.png");
 	},
   	create: function(){
-		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-		this.scale.pageAlignHorizontally = true;
+		//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		//this.scale.pageAlignHorizontally = true;
 		//this.scale.setScreenSize();
 		this.game.state.start("Preload");
 	}
@@ -22,8 +22,8 @@ var preload = function(game){
 
 preload.prototype = {
 	preload: function(){
-          //var loadingBar = this.add.sprite(160,240,"loading");
-          //loadingBar.anchor.setTo(0.5,0.5);
+          var loadingBar = this.add.sprite(160,240,"vaaalikko");
+          loadingBar.anchor.setTo(0.5,0.5);
           //this.load.setPreloadSprite(loadingBar);
           this.game.stage.backgroundColor = '';
           this.game.load.image('start', 'putket/start.png');
