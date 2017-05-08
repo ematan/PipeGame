@@ -169,6 +169,7 @@ function checkNext(coords, prevDir){
     if(indeksi==-1){
     //stop execution here
       nextCoord=startCoord
+      lose=true
       console.log(connectedArray)
     }else{
       connectedArray.push(coords);

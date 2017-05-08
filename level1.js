@@ -38,3 +38,4 @@ var level1 = function(game){}
     }
   };
   var updateW = false
+  var testTicker=1000
