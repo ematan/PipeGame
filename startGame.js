@@ -35,11 +35,11 @@ startGame.prototype = {
 	},
     soundCheck: function(){
 		if(playMusic==true){
-            game.input.onDown.add(music.pause(), this);
+            music.pause()
             playMusic=false
         }
         else if(playMusic==false){
-            game.input.onDown.add(music.resume(), this);
+            music.resume()
             playMusic=true
         }
 	}
