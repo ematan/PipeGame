@@ -42,7 +42,7 @@ function createPause() {
         // Only act if paused
         if(game.paused){
             // Calculate the corners of the menu
-            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+160,
+            var x1 = gridW/2 - 270/2, x2 = gridW/2 + 270/2+165,
                 y1 = gridH/2 - 180/2, y2 = gridH/2 + 180/2;
 
             // Check if the click was inside the menu
@@ -53,19 +53,19 @@ function createPause() {
                 var x = event.x - x1,
                     y = event.y - y1;
                 // Calculate the choice
-                var choise = Math.floor(x / 90) + 3*Math.floor(y / 90);
+                var choise = Math.floor(x / 140) + 3*Math.floor(y / 70);
                 // Display the choice
                 if(choisemap[choise]=='taso1'){
-
+                    console.log("tas01")
                 }
                 else if(choisemap[choise]=='taso2'){
-
+                    console.log("tas02")
                 }
                 else if(choisemap[choise]=='taso3'){
-
+                    console.log("tas03")
                 }
                 else if(choisemap[choise]=='äänet'){
-                    console.log("äänet toimii")
+                    console.log("äänet")
                     if(playMusic==true){
                         game.input.onDown.add(pauseMusic, this);
                         playMusic=false
@@ -76,10 +76,10 @@ function createPause() {
                     }
                 }
                 else if(choisemap[choise]=='ohjeet'){
-
+                    console.log("ohjeet")
                 }
                 else if(choisemap[choise]=='tekijät'){
-
+                    console.log("tekijät")
                 }
             }
             else{
