@@ -1,4 +1,4 @@
-var drawGrid = function(startX, startY, w, h) {
+var drawGrid = function(startX, startY, w, h, game) {
 
     var gfx = game.add.graphics(startX, startY);
     gfx.lineStyle(3, 0xffffff, 5);
@@ -51,7 +51,7 @@ function render(){
 //var bench7 = ["","","","","","",""];
 var latestY = 0;
 
-function drawWaitingRoom(){
+function drawWaitingRoom(game){
   for(var i=0; i<7; i++){
     var x = game.add.sprite(0,i*squareSize, waitingRoom[i].img);
     x.customPipeIndex = allPipes.indexOf(waitingRoom[i])
