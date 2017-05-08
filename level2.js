@@ -15,8 +15,14 @@ var level2 = function(game){}
           createMega();
           fillWaitingRoom();
           var mermaid = game.add.sprite(300, 200, 'mermaid');
-          var walk = mermaid.animations.add('turn');
+          var turn = mermaid.animations.add('turn');
           mermaid.animations.play('turn', 30, true);
+          var shark = game.add.sprite(400, 200, 'shark');
+          var swim = shark.animations.add('swim');
+          shark.animations.play('swim', 30, true);
+          var jellyfish = game.add.sprite(400, 200, 'fellyfish');
+          var wiggle = jellyfish.animations.add('wiggle');
+          jellyfish.animations.play('wiggle', 30, true);
           drawWaitingRoom(this.game);
           //createTimer();
           //createPause(this.game);

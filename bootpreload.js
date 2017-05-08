@@ -38,6 +38,7 @@ preload.prototype = {
           this.game.load.image('aloitaPeli', 'aloitaPeli.jpg');
           this.game.load.spritesheet('mermaid', 'meri/mermaid.png', 32, 48, 16);
           this.game.load.spritesheet('shark', 'meri/shark1.png', 142, 121, 7);
+          this.game.load.spritesheet('jellyfish', 'meri/jellyfish.png', 66, 72, 5);
 	},
   	create: function(){
 		this.game.state.start("startGame");
