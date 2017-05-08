@@ -4,7 +4,7 @@ var boot = function(game){
 
 boot.prototype = {
 	preload: function(){
-          this.game.load.image("vaaalikko","valikko.png");
+          
 	},
   	create: function(){
 		//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -22,8 +22,8 @@ var preload = function(game){
 
 preload.prototype = {
 	preload: function(){
-          var loadingBar = this.add.sprite(160,240,"vaaalikko");
-          loadingBar.anchor.setTo(0.5,0.5);
+          //var loadingBar = this.add.sprite(160,240,"vaaalikko");
+          //loadingBar.anchor.setTo(0.5,0.5);
           //this.load.setPreloadSprite(loadingBar);
           this.game.stage.backgroundColor = '';
           this.game.load.image('start', 'putket/start.png');
@@ -35,6 +35,7 @@ preload.prototype = {
           this.game.load.image('corner4', 'putket/corner4.png');
           this.game.load.image('menu', 'valikko.png');
           this.game.load.audio('mystery', 'mystery.mp3');
+          this.game.load.image('aloitaPeli', 'aloitaPeli.jpg');
 	},
   	create: function(){
 		this.game.state.start("startGame");
