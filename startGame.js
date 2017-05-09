@@ -1,11 +1,13 @@
+//startGame = menuvalikko :D
+
 var startGame = function(game){}
 
-//var playMusic = true;
+//var playMusic = true; <--- löytyy jo toisaalta, mutta laitetaanko tänne?
 var music;
 
 startGame.prototype = {
   	create: function(){
-
+      
 		var play1 = this.game.add.button(this.game.world.centerX,this.game.world.centerY-200,"lvl1",this.playLevel1,this);
         play1.scale.setTo(0.6, 0.6);
 		play1.anchor.setTo(0.5,0.5);
