@@ -1,16 +1,14 @@
 var timer;
 var total = 0;
 var playMusic = true;
-var maxTime = 1200000;
+var maxTime = 60000;
 
 function createTimer(game) {
-    //game.stage.backgroundColor = '#000';
-    //  Create our Timer
+    //Create our Timer
     timer = game.time.create(false);
-    //  Set a TimerEvent to occur after 1 minute
+    //Set the timer to loop
     timer.loop(maxTime, updateCounter, this);
-    //  Start the timer running - this is important!
-    //  It won't start automatically, allowing you to hook it to button events and the like.
+    //Start the timer running
     timer.start();
 };
 
@@ -18,23 +16,26 @@ function updateCounter() {
     total++;
 };
 
+//Create the mute button that controls the background music
 function createMute(game){
-  mute_label = game.add.text(90, 510, 'Mute', { font: 'bold 30px Annie Use Your Telescope', fill: 'white' });
-  mute_label.inputEnabled = true;
-  mute_label.events.onInputUp.add(function () {
-      if(playMusic){
+    //Create a label to use as the mute-button
+    mute_label = game.add.text(90, 510, 'Mute', { font: 'bold 30px Annie Use Your Telescope', fill: 'white' });
+    mute_label.inputEnabled = true;
+    //Code that controls the playing and pausing the music
+    mute_label.events.onInputUp.add(function () {
+        if(playMusic){
             music.pause()
             playMusic=false
-      }else{
+        }else{
             playMusic= true;
             music.resume()
-      }
-  });
+        }
+    });
 }
 
 function createPause(game) {
     //Code for the pause menu
-    //Create a label to use as a button
+    //Create a label to use as the pause-button
     pause_label = game.add.text(10, 510, 'Pause', { font: 'bold 30px Annie Use Your Telescope', fill: 'white' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
@@ -49,10 +50,10 @@ function createPause(game) {
         choiseLabel.anchor.setTo(0.5, 0.5);*/
     });
 
-    // Add a input listener that can help us return from being paused
+    //Add a input listener that can help us return from being paused
     game.input.onDown.add(unpause, self);
 
-    // And finally the method that handels the pause menu
+    //Method that handels the pause menu
     function unpause(event){
         // Only act if paused
         if(game.paused){
