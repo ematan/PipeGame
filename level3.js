@@ -20,13 +20,16 @@ var level3 = function(game){}
           endingPipe = this.game.add.sprite(840, 70, 'straight2');
           createMega();
           fillWaitingRoom();
+       //Ensimmäisen hain piirto pelialueelle sprite sheett:ien avulla
           var shark = this.game.add.sprite(558, 80, 'shark');
           var swim = shark.animations.add('swim');
           shark.animations.play('swim', 10, true);
+          //"varaa" neljä ruutua sprite:lle, jottei sen päälle voi enää laittaa putkea
           megaArray[8][1]="defined"
           megaArray[8][2]="defined"
           megaArray[9][1]="defined"
           megaArray[9][2]="defined"
+       //Toisen hain piirto pelialueelle sprite sheett:ien avulla
           var shark2 = this.game.add.sprite(280, 150, 'shark');
           var swim = shark2.animations.add('swim');
           shark2.animations.play('swim', 10, true);
@@ -34,6 +37,7 @@ var level3 = function(game){}
           megaArray[4][3]="defined"
           megaArray[5][2]="defined"
           megaArray[5][3]="defined"
+       //Kolmannen hain piirto pelialueelle sprite sheett:ien avulla
           var shark3 = this.game.add.sprite(420, 360, 'shark');
           var swim = shark3.animations.add('swim');
           shark3.animations.play('swim', 10, true);
@@ -41,6 +45,7 @@ var level3 = function(game){}
           megaArray[6][6]="defined"
           megaArray[7][5]="defined"
           megaArray[7][6]="defined"
+       //Neljännen hain piirto pelialueelle sprite sheett:ien avulla
           var shark4 = this.game.add.sprite(630, 290, 'shark');
           var swim = shark4.animations.add('swim');
           shark4.animations.play('swim', 10, true);
@@ -48,12 +53,14 @@ var level3 = function(game){}
           megaArray[9][5]="defined"
           megaArray[10][5]="defined"
           megaArray[10][4]="defined"
+       //Pelin piirto pelialueelle
           drawWaitingRoom(this.game);
           createTimer(this.game);
           createPause(this.game);
           createMute(this.game);
           //createMusic(this.game);
     },
+    //Päivittää pelialuetta ajankohtaiseksi
     update: function(){
         var a = this.game;
         this.game.input.onDown.add(function () {updateY(a);}, this)
@@ -73,19 +80,16 @@ var level3 = function(game){}
         }
     },
     render: function(){
+      //Piirtää aikapalkin pelin alareunalle
       var graphics1 = this.game.add.graphics(squareSize*3, 500);
       graphics1.clear();
-      // set a fill and line style
       graphics1.beginFill(0xFF3300);
       graphics1.lineStyle(0, 0xffffff, 1);
-
-  // draw a shape
       graphics1.moveTo(0,0);
       graphics1.lineTo(0, 50);
       graphics1.lineTo((9*squareSize)*((maxTime-timer.duration.toFixed(0))/maxTime), 50);
       graphics1.lineTo((9*squareSize)*((maxTime-timer.duration.toFixed(0))/maxTime), 0);
       graphics1.lineTo(0,0);
       graphics1.endFill();
-        //game.debug.text('DEADLINE LÄHESTYY : ' + timer.duration.toFixed(0), 100, 525, { font: 'bold 25pt Annie Use Your Telescope' , fill: '#ff2626'});
     }
   };
