@@ -22,7 +22,7 @@ loseGame.prototype = {
     create: function(){
         restartStuff();
         var style = { font: "bold 32px Annie Use Your Telescope", fill: "#fff"};
-        var text = this.game.add.text(this.game.world.centerX-200, this.game.world.centerY-200, "Valitettavasti et pysynyt aikataulussa \n ja putket ruostuivat merenpohjaan...", style);
+        var text = this.game.add.text(this.game.world.centerX-200, this.game.world.centerY-200, "Valitettavasti et onnistunut työssäsi \n ja putket ruostuivat merenpohjaan...", style);
         var playButton = this.game.add.button(this.game.world.centerX,this.game.world.centerY,"valikkoon",this.playTheGame,this);
         playButton.scale.setTo(0.7, 0.7);
         playButton.anchor.setTo(0.5,0.5);
