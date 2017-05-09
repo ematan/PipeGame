@@ -11,64 +11,36 @@ function createPipe(){
 //waitingroomista. (Näin se virhesiirron kohdalla osataan palauttaa
 //takaisin paikalleen.)
 var straight1={
-    //up: true,
-    //down: true,
-    //left: false,
-    //rigth: false,
     open: [1,3],    //up:1, down:3, left:4, right:2
     img: 'straight1',
     origY: 0
 };
 var straight2={
-    //up: false,
-    //down: false,
-    //left: true,
-    //rigth: true,
     open: [2,4],
     img: 'straight2',
     origY: 0
 };
 var corner1={
-    /*up: true,
-    down: false,
-    left: false,
-    rigth: true,*/
     open: [1,2],
     img: 'corner1',
     origY: 0
 };
 var corner2={
-    /*up: false,
-    down: true,
-    left: false,
-    rigth: true,*/
     open: [2,3],
     img: 'corner2',
     origY: 0
 };
 var corner3={
-    /*up: false,
-    down: true,
-    left: true,
-    rigth: false,*/
     open: [3,4],
     img: 'corner3',
     origY: 0
 };
 var corner4={
-    /*up: true,
-    down: false,
-    left: true,
-    rigth: false,*/
     open: [1,4],
     img: 'corner4',
     origY: 0
 };
 var startingPipe={
-    /*up: false,
-    down: false,
-    left: false,
-    rigth: true,*/
     open: [2],
     img: 'start'
 };
@@ -106,8 +78,6 @@ function unEnableDrag(pipe){
     pipe.input.enableDrag(false);
 }
 
-//function onDragStop(sprite, pointer) {}
-
 var currentY;
 function getCurrentY(){currentY};
 
@@ -116,14 +86,6 @@ function onDragStart(sprite, pointer){
   //currentY = Math.floor(pointer.y/squareSize);
   result = sprite.key + " starts at y:" + pointer.y + " and currentY:" +currentY
 }
-
-//vain vasemmasta ruudukosta voi dragata vain oikeaan  ruudukkoon, eli tsekkaa koordinaateilla, että putket pysyvät ruudukkojen sisällä. ei toimi vielä? pitää kutsua tätä funktiota silloin, kun yritetään liikuttaa putkenpalaa
-              /*function checkPipeLocation(pipe){
-              if((pipe.y >= 0 || pipe.y <= cheigth) && (pipe.x >= 0 || pipe.x <= squareSize)){
-              enableDrag
-              }
-              else{unEnableDrag}
-              };*/
 
 //lisää putken peliruudukkoon
 function addPipe(pipe, x, y){
@@ -182,7 +144,6 @@ function checkNext(coords, prevDir){
   }
   else{
     //Debuggaus: console.log(coords + " + PrevDir:" + prevDir)
-    //var pipeName = megaArray[coords[0]][coords[1]].key;
 
     //Nyt tiedetään, että ruudussa on jotain. Haetaan sen spriten
     //tyyppi (customPipeIndex). Jos kyseessä ei ole putki, ei löydetä mitään

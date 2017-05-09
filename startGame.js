@@ -2,12 +2,11 @@
 
 var startGame = function(game){}
 
-//var playMusic = true; <--- löytyy jo toisaalta, mutta laitetaanko tänne?
 var music;
 
 startGame.prototype = {
   	create: function(){
-      
+      //Päävalikon nappuloiden ja niiden toiminnallisuuksien luonti
 		var play1 = this.game.add.button(this.game.world.centerX,this.game.world.centerY-200,"lvl1",this.playLevel1,this);
         play1.scale.setTo(0.6, 0.6);
 		play1.anchor.setTo(0.5,0.5);
@@ -24,6 +23,8 @@ startGame.prototype = {
         äänet.scale.setTo(0.6, 0.6);
 		äänet.anchor.setTo(0.5,0.5);
 	},
+    //Täällä määritellään, että mitä tapahtuu, kun jotain tiettyä nappulaa on painettu
+    //Esim. kun painetaan nappulaa, jossa lukee "taso 1", peli alkaa pyörittää tasoa yksi
 	playLevel1: function(){
 		this.game.state.start("level1");
 	},
@@ -33,6 +34,7 @@ startGame.prototype = {
     playLevel3: function(){
 		this.game.state.start("level3");
 	},
+    //Ääninappulaa painettassa musiikki pyörii tai loppuu
     soundCheck: function(){
 		if(playMusic==true){
             music.pause()
