@@ -191,3 +191,15 @@ function checkNext(coords, prevDir){
   }
   }
 }
+
+
+var updateW = false
+
+function update() {
+    game.input.onDown.add(updateY, this)
+    //fillWaitingRoom();
+    if(updateW){
+      drawWaitingRoom();
+      updateW =false
+    }
+}

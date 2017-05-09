@@ -1,5 +1,5 @@
 var boot = function(game){
-	console.log("%cKäynnistä peli", "color:white; background:red");
+	//Debuggausta varten: console.log("%cKäynnistä peli", "color:white; background:red");
 };
 
 boot.prototype = {
@@ -17,14 +17,12 @@ boot.prototype = {
 
 //preload alkaa tästä
 var preload = function(game){
-  console.log("%cLataa peli", "color:white; background:red");
+  //Debuggausta varten: console.log("%cLataa peli", "color:white; background:red");
 }
 
 preload.prototype = {
 	preload: function(){
-          //var loadingBar = this.add.sprite(160,240,"vaaalikko");
-          //loadingBar.anchor.setTo(0.5,0.5);
-          //this.load.setPreloadSprite(loadingBar);
+				//Tuodaan peliin äänet & kuvat
           this.game.stage.backgroundColor = '';
           this.game.load.image('start', 'putket/start.png');
           this.game.load.image('straight1', 'putket/straight1.png');
@@ -45,8 +43,10 @@ preload.prototype = {
           this.game.load.spritesheet('jellyfish', 'meri/jellyfish1.png', 288/6, 47, 6);
 	},
   	create: function(){
-		this.game.state.start("startGame");
+			//Käynnistetään musiikki
         music = this.game.add.audio('mystery');
         music.loopFull();
+			//Siirrytään valikkoon
+				this.game.state.start("startGame");
 	}
 }

@@ -1,3 +1,7 @@
+var gridH = 490;
+var gridW = 735;
+var squareSize = 70;
+
 var drawGrid = function(startX, startY, w, h, game) {
 
     var gfx = game.add.graphics(startX, startY);
