@@ -18,6 +18,20 @@ function updateCounter() {
     total++;
 };
 
+function createMute(game){
+  mute_label = game.add.text(90, 510, 'Mute', { font: 'bold 30px Annie Use Your Telescope', fill: 'white' });
+  mute_label.inputEnabled = true;
+  mute_label.events.onInputUp.add(function () {
+      if(playMusic){
+            music.pause()
+            playMusic=false
+      }else{
+            playMusic= true;
+            music.resume()
+      }
+  });
+}
+
 function createPause(game) {
     //Code for the pause menu
     //Create a label to use as a button

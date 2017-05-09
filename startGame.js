@@ -1,6 +1,6 @@
 var startGame = function(game){}
 
-var playMusic = true;
+//var playMusic = true;
 var music;
 
 startGame.prototype = {
