@@ -34,3 +34,16 @@
     //spriten luominen
     //game.add.sprite(0, 0, 'fisu');
 }*/
+
+
+
+
+
+/*function update() {
+    game.input.onDown.add(updateY, this)
+    //fillWaitingRoom();
+    if(updateW){
+      drawWaitingRoom();
+      updateW =false
+    }
+}*/
