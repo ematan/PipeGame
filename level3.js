@@ -51,6 +51,7 @@ var level3 = function(game){}
           drawWaitingRoom(this.game);
           createTimer(this.game);
           createPause(this.game);
+          createMute(this.game);
           //createMusic(this.game);
     },
     update: function(){
