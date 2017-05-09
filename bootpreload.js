@@ -31,9 +31,7 @@ preload.prototype = {
           this.game.load.image('corner2', 'putket/corner2.png');
           this.game.load.image('corner3', 'putket/corner3.png');
           this.game.load.image('corner4', 'putket/corner4.png');
-          this.game.load.image('menu', 'valikko.png');
           this.game.load.audio('mystery', 'sea.mp3');
-          this.game.load.image('aloitaPeli', 'aloitaPeli.jpg');
           this.game.load.image('lvl1', 'menu/lvl1.png');
           this.game.load.image('lvl2', 'menu/lvl2.png');
           this.game.load.image('lvl3', 'menu/lvl3.png');
