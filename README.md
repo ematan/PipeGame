@@ -16,3 +16,7 @@ Background image:
 Masters behind the scenes:
     Emma Honkamaa
     Anu Vehkamäki
+    
+How to play?
+    Connect the two pipes outside of the gamezone/grid by draging the pieces of pipes to from the left. 
+    Make a connected pipe before the time runs out. Also beware the seacreatures and the edges.
